@@ -36,6 +36,7 @@ Bot de Discord para la gestión de pruebas y administración del servidor The En
 
 ### Comandos de Administración
 - `??roles` - Gestiona roles permitidos
+- `??clear <cantidad>` - Borra hasta 50 mensajes en el canal actual
 
 ## 🚀 Instalación
 

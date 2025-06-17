@@ -51,7 +51,8 @@ module.exports = {
                         .addFields(
                             { name: `${emojis.roles} Roles`, value: `\`${config.prefix}roles\`\nMuestra los roles permitidos para testing` },
                             { name: `${emojis.roles} Agregar Rol`, value: `\`${config.prefix}roles add @rol\`\nAgrega un rol a la lista de roles permitidos` },
-                            { name: `${emojis.roles} Remover Rol`, value: `\`${config.prefix}roles remove @rol\`\nRemueve un rol de la lista de roles permitidos` }
+                            { name: `${emojis.roles} Remover Rol`, value: `\`${config.prefix}roles remove @rol\`\nRemueve un rol de la lista de roles permitidos` },
+                            { name: `${emojis.error} Clear`, value: `\`${config.prefix}clear <cantidad>\`\nBorra hasta 50 mensajes en el canal actual` }
                         );
                     break;
 
