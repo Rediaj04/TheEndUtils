@@ -35,6 +35,14 @@ ${emojis.time} \`${config.prefix}afk @usuario\`
 
 ${emojis.separator}
 
+${emojis.help} **Comandos Globales** ${emojis.help}
+*Disponibles para todos los usuarios*
+
+${emojis.fun} \`${config.prefix}kunno @usuario\` 
+└ Kunnoniza la imagen de perfil de un usuario
+
+${emojis.separator}
+
 ${emojis.admin} **Comandos de Administración** ${emojis.admin}
 *Solo para administradores*
 

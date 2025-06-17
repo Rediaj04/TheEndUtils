@@ -30,9 +30,12 @@ Bot de Discord para la gestión de pruebas y administración del servidor The En
 - `??nopass @usuario` - Notifica no aprobación
 - `??afk @usuario` - Marca usuario como AFK
 
+### Comandos Globales
+- `??kunno @usuario` - Kunnoniza la imagen de perfil de un usuario
+- `??ayuda` - Muestra lista de comandos
+
 ### Comandos de Administración
 - `??roles` - Gestiona roles permitidos
-- `??ayuda` - Muestra lista de comandos
 
 ## 🚀 Instalación
 
