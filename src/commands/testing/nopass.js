@@ -5,15 +5,21 @@ const permissions = require('../../utils/permissions');
 module.exports = {
     name: 'nopass',
     description: 'Notifica que un usuario no ha aprobado las pruebas',
-    execute(message, args) {
+    async execute(message, args) {
         // Verificar permisos
         if (!permissions.canUseTesting(message.member)) {
-            return message.reply('No tienes permisos para usar este comando.');
+            const errorMsg = await message.reply('No tienes permisos para usar este comando.');
+            setTimeout(() => errorMsg.delete().catch(console.error), 2000);
+            setTimeout(() => message.delete().catch(console.error), 2000);
+            return;
         }
 
         const user = message.mentions.users.first();
         if (!user) {
-            return message.reply(`Por favor, menciona al usuario que no aprobó las pruebas.\nEjemplo: \`${config.prefix}nopass @usuario\``);
+            const errorMsg = await message.reply(`Por favor, menciona al usuario que no aprobó las pruebas.\nEjemplo: \`${config.prefix}nopass @usuario\``);
+            setTimeout(() => errorMsg.delete().catch(console.error), 2000);
+            setTimeout(() => message.delete().catch(console.error), 2000);
+            return;
         }
 
         const { emojis } = styles;
@@ -29,7 +35,7 @@ Lamentablemente, no has superado las pruebas esta vez.
 ⚡ No te desanimes, ¡puedes volver a intentarlo en **1 semana**! ⚡
 ${emojis.separator}`;
 
-        message.channel.send({ content: `${nopassMessage}\n\n||${user}||` });
-        message.delete().catch(console.error);
+        await message.channel.send({ content: `${nopassMessage}\n\n||${user}||` });
+        await message.delete().catch(console.error);
     },
 }; 

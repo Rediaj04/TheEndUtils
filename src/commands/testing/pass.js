@@ -8,13 +8,19 @@ module.exports = {
     async execute(message, args, client) {
         // Verificar permisos
         if (!permissions.canUseTesting(message.member)) {
-            return message.reply('No tienes permisos para usar este comando.');
+            const errorMsg = await message.reply('No tienes permisos para usar este comando.');
+            setTimeout(() => errorMsg.delete().catch(console.error), 2000);
+            setTimeout(() => message.delete().catch(console.error), 2000);
+            return;
         }
 
         // Verificar si se mencionó a un usuario
         const user = message.mentions.users.first();
         if (!user) {
-            return message.reply(`Por favor, menciona a un usuario. Ejemplo: ${config.prefix}pass @usuario`);
+            const errorMsg = await message.reply(`Por favor, menciona a un usuario. Ejemplo: ${config.prefix}pass @usuario`);
+            setTimeout(() => errorMsg.delete().catch(console.error), 2000);
+            setTimeout(() => message.delete().catch(console.error), 2000);
+            return;
         }
 
         // Crear el mensaje de aprobación
@@ -22,8 +28,6 @@ module.exports = {
 
         // Enviar el mensaje mencionando al usuario al final
         await message.channel.send(`${passMessage}\n\n||${user}||`);
-
-        // Eliminar el mensaje original
-        await message.delete();
+        await message.delete().catch(console.error);
     },
 }; 
