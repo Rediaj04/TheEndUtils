@@ -16,13 +16,17 @@ module.exports = {
             return message.reply(`Por favor, menciona al usuario que está en pruebas.\nEjemplo: \`${config.prefix}test @usuario\``);
         }
 
-        const testMessage = styles.formatMessage(
-            '🧪 Usuario en Pruebas',
-            `El usuario está actualmente en período de pruebas.\nPor favor, mantén un comportamiento adecuado y sigue las reglas del servidor.`,
-            'info'
-        );
+        const testMessage = `${styles.emojis.separator}
+⚔️ **¡Gracias por intentar entrar al clan!**  
 
-        message.channel.send({ content: `${testMessage}\n${user}` });
+🕒 Tu test de PvP está por finalizar, y en breve recibirás tu resultado.  
+
+🎥 Mientras esperas, puedes seguirme en TikTok:  
+
+👉 https://www.tiktok.com/@jaid3r04
+${styles.emojis.separator}`;
+
+        message.channel.send({ content: `${testMessage}\n\n${user}` });
         message.delete().catch(console.error);
     },
 }; 
