@@ -1,0 +1,17 @@
+{
+  "name": "theendutils",
+  "version": "1.0.0",
+  "description": "Bot de utilidades para Discord",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.14.1",
+    "dotenv": "^16.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
+  }
+} 
