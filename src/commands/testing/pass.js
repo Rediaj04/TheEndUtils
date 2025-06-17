@@ -20,8 +20,8 @@ module.exports = {
         // Crear el mensaje de aprobación
         const passMessage = `🎉 **¡Felicidades!**\n\n✅ Has aprobado las pruebas y tu resultado ha sido **positivo**.\n\n📄 Revisa los detalles en el siguiente canal:\n\n🔗 https://discord.com/channels/1227460757524975678/1294703380866007141`;
 
-        // Enviar el mensaje mencionando al usuario
-        await message.channel.send(`${user} ${passMessage}`);
+        // Enviar el mensaje mencionando al usuario al final
+        await message.channel.send(`${passMessage}\n${user}`);
 
         // Eliminar el mensaje original
         await message.delete();

@@ -54,7 +54,7 @@ ${emojis.separator}
 
 ||<@&1227989693346484366>||`;
 
-        await message.channel.send(`${user} ${plantillaMessage}`);
+        await message.channel.send(`${plantillaMessage}\n${user}`);
         await message.delete();
     },
 }; 

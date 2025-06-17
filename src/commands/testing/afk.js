@@ -31,8 +31,8 @@ module.exports = {
 🔒 **TheEnd Community**
 ${emojis.separator}`;
 
-        // Enviar el mensaje mencionando al usuario
-        await message.channel.send(`${user} ${afkMessage}`);
+        // Enviar el mensaje mencionando al usuario al final
+        await message.channel.send(`${afkMessage}\n${user}`);
 
         // Eliminar el mensaje original
         await message.delete();

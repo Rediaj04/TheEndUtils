@@ -18,11 +18,11 @@ module.exports = {
 
         const testMessage = styles.formatMessage(
             '🧪 Usuario en Pruebas',
-            `El usuario ${user} está actualmente en período de pruebas.\nPor favor, mantén un comportamiento adecuado y sigue las reglas del servidor.`,
+            `El usuario está actualmente en período de pruebas.\nPor favor, mantén un comportamiento adecuado y sigue las reglas del servidor.`,
             'info'
         );
 
-        message.channel.send({ content: testMessage });
+        message.channel.send({ content: `${testMessage}\n${user}` });
         message.delete().catch(console.error);
     },
 }; 

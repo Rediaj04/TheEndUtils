@@ -18,11 +18,11 @@ module.exports = {
 
         const nopassMessage = styles.formatMessage(
             '❌ Pruebas No Aprobadas',
-            `Lo sentimos ${user}, no has aprobado las pruebas en esta ocasión.\nPuedes intentarlo nuevamente en el futuro.`,
+            `Lo sentimos, no has aprobado las pruebas en esta ocasión.\nPuedes intentarlo nuevamente en el futuro.`,
             'error'
         );
 
-        message.channel.send({ content: nopassMessage });
+        message.channel.send({ content: `${nopassMessage}\n${user}` });
         message.delete().catch(console.error);
     },
 }; 

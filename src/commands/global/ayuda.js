@@ -58,7 +58,7 @@ ${emojis.separator}
 
 💖 *The End Utils - Tu asistente perfecto* 💖`;
 
-        await message.channel.send(`${user} ${ayudaMessage}`);
+        await message.channel.send(`${ayudaMessage}\n${user}`);
         await message.delete();
     },
 }; 

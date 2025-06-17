@@ -45,7 +45,7 @@ ${emojis.separator}
 
 💖 *The End - Donde los mejores se unen* 💖`;
 
-        await message.channel.send(`${user} ${reglasMessage}`);
+        await message.channel.send(`${reglasMessage}\n${user}`);
         await message.delete();
     },
 }; 
