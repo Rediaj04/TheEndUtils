@@ -46,6 +46,7 @@ module.exports = {
                             { name: `${emojis.user} User Info`, value: `\`${config.prefix}userinfo @usuario\`\nMuestra información detallada de un usuario` },
                             { name: `${emojis.magic} 8Ball`, value: `\`${config.prefix}8ball <pregunta>\`\nResponde a tus preguntas de forma aleatoria` },
                             { name: `${emojis.title} Ontop`, value: `\`${config.prefix}ontop\`\nMuestra el poderío de The End` },
+                            { name: `${emojis.globe} Redes`, value: `\`${config.prefix}redes\` o \`${config.prefix}fan\`\nMuestra las redes sociales` },
                             { name: `${emojis.help} Ayuda`, value: `\`${config.prefix}ayuda\`\nMuestra esta lista de comandos` }
                         );
                     break;
