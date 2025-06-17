@@ -16,11 +16,18 @@ module.exports = {
             return message.reply(`Por favor, menciona al usuario que no aprobó las pruebas.\nEjemplo: \`${config.prefix}nopass @usuario\``);
         }
 
-        const nopassMessage = styles.formatMessage(
-            '❌ Pruebas No Aprobadas',
-            `Lo sentimos, no has aprobado las pruebas en esta ocasión.\nPuedes intentarlo nuevamente en el futuro.`,
-            'error'
-        );
+        const { emojis } = styles;
+        
+        const nopassMessage = `${emojis.separator}
+⚠️ **Resultado: No Aprobado**
+
+Lamentablemente, no has superado las pruebas esta vez.  
+📄 Puedes revisar los detalles aquí:  
+
+🔗 https://discord.com/channels/1227460757524975678/1294703498377560085
+
+⚡ No te desanimes, ¡puedes volver a intentarlo en **1 semana**! ⚡
+${emojis.separator}`;
 
         message.channel.send({ content: `${nopassMessage}\n${user}` });
         message.delete().catch(console.error);

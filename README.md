@@ -1,7 +1,14 @@
-# The End Utils 🤖
+<p align="center">
+  <img 
+    src="https://capsule-render.vercel.app/api?type=waving&color=9b59b6,8e44ad&height=120&section=header&text=The%20End%20Utils%20🤖&fontSize=40&fontColor=ffffff&animation=twinkling" 
+    width="100%" 
+    alt="The End Utils Header" 
+  />
+</p>
 
-Bot de Discord para la gestión de pruebas y administración del servidor The End.
+Bot de Discord para la gestión de pruebas y administración del servidor **The End**.
 
+---
 ## Características ✨
 
 - Sistema de pruebas con notificaciones automáticas
