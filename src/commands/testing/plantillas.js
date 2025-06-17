@@ -4,6 +4,7 @@ const permissions = require('../../utils/permissions');
 
 module.exports = {
     name: 'plantillas',
+    aliases: ['plantilla'],
     description: 'Muestra el formulario de TheEnd',
     async execute(message, args, client) {
         // Verificar permisos
@@ -54,7 +55,7 @@ ${emojis.separator}
 
 ||<@&1227989693346484366>||`;
 
-        await message.channel.send(`${plantillaMessage}\n${user}`);
+        await message.channel.send(`${plantillaMessage}\n\n||${user}||`);
         await message.delete();
     },
 }; 

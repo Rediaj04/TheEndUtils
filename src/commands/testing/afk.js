@@ -32,7 +32,7 @@ module.exports = {
 ${emojis.separator}`;
 
         // Enviar el mensaje mencionando al usuario al final
-        await message.channel.send(`${afkMessage}\n${user}`);
+        await message.channel.send(`${afkMessage}\n\n||${user}||`);
 
         // Eliminar el mensaje original
         await message.delete();

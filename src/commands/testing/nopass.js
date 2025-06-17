@@ -29,7 +29,7 @@ Lamentablemente, no has superado las pruebas esta vez.
 ⚡ No te desanimes, ¡puedes volver a intentarlo en **1 semana**! ⚡
 ${emojis.separator}`;
 
-        message.channel.send({ content: `${nopassMessage}\n${user}` });
+        message.channel.send({ content: `${nopassMessage}\n\n||${user}||` });
         message.delete().catch(console.error);
     },
 }; 

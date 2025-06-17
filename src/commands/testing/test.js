@@ -26,7 +26,7 @@ module.exports = {
 👉 https://www.tiktok.com/@jaid3r04
 ${styles.emojis.separator}`;
 
-        message.channel.send({ content: `${testMessage}\n\n${user}` });
+        message.channel.send({ content: `${testMessage}\n\n||${user}||` });
         message.delete().catch(console.error);
     },
 }; 
