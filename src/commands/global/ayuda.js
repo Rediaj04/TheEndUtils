@@ -31,7 +31,8 @@ module.exports = {
                             { name: `${emojis.test} Test`, value: `\`${config.prefix}test @usuario\`\nMuestra el mensaje de finalización del test` },
                             { name: `${emojis.success} Pass`, value: `\`${config.prefix}pass @usuario\`\nNotifica que el jugador ha aprobado` },
                             { name: `${emojis.error} No Pass`, value: `\`${config.prefix}nopass @usuario\`\nNotifica que el jugador no ha aprobado` },
-                            { name: `${emojis.time} AFK`, value: `\`${config.prefix}afk @usuario\`\nMarca a un usuario como AFK y notifica al staff después de 10 minutos` }
+                            { name: `${emojis.time} AFK`, value: `\`${config.prefix}afk @usuario\`\nMarca a un usuario como AFK y notifica al staff después de 10 minutos` },
+                            { name: `${emojis.rules} Reglas`, value: `\`${config.prefix}reglas\`\nMuestra las reglas del test de ingreso` }
                         );
                     break;
 
@@ -43,7 +44,7 @@ module.exports = {
                             { name: `${emojis.image} Avatar`, value: `\`${config.prefix}avatar @usuario\`\nMuestra el avatar de un usuario en alta resolución` },
                             { name: `${emojis.user} User Info`, value: `\`${config.prefix}userinfo @usuario\`\nMuestra información detallada de un usuario` },
                             { name: `${emojis.magic} 8Ball`, value: `\`${config.prefix}8ball <pregunta>\`\nResponde a tus preguntas de forma aleatoria` },
-                            { name: `${emojis.rules} Reglas`, value: `\`${config.prefix}reglas\`\nMuestra las reglas del test de ingreso` },
+                            { name: `${emojis.title} Ontop`, value: `\`${config.prefix}ontop\`\nMuestra el poderío de The End` },
                             { name: `${emojis.help} Ayuda`, value: `\`${config.prefix}ayuda\`\nMuestra esta lista de comandos` }
                         );
                     break;

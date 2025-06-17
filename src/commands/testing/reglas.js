@@ -1,20 +1,23 @@
+const { EmbedBuilder } = require('discord.js');
 const config = require('../../config');
 const styles = require('../../utils/styles');
-const permissions = require('../../utils/permissions');
 
 module.exports = {
     name: 'reglas',
-    description: 'Muestra las reglas para ingresar al clan',
+    description: 'Muestra las reglas del test de ingreso',
     async execute(message, args, client) {
-        // Verificar permisos
-        if (!permissions.canUseTesting(message.member)) {
-            return message.reply('No tienes permisos para usar este comando.');
-        }
+        try {
+            const { emojis } = styles;
+            const user = message.mentions.users.first() || message.author;
 
-        const { emojis } = styles;
-        const user = message.mentions.users.first() || message.author;
-        
-        const reglasMessage = `${emojis.separator}
+            // Verificar si el usuario tiene permisos de administrador
+            if (!message.member.permissions.has('Administrator')) {
+                const errorMsg = await message.reply('❌ No tienes permiso para usar este comando. Solo los administradores pueden ver las reglas.');
+                setTimeout(() => errorMsg.delete().catch(console.error), 5000);
+                return;
+            }
+
+            const reglasMessage = `${emojis.separator}
 ${emojis.rules} **REGLAS PARA INGRESAR AL CLAN** ${emojis.rules}
 ${emojis.separator}
 
@@ -45,7 +48,13 @@ ${emojis.separator}
 
 💖 *The End - Donde los mejores se unen* 💖`;
 
-        await message.channel.send(`${reglasMessage}\n\n||${user}||`);
-        await message.delete();
+            await message.channel.send(`${reglasMessage}\n\n||${user}||`);
+            await message.delete().catch(console.error);
+        } catch (error) {
+            console.error('Error en el comando reglas:', error);
+            message.reply('❌ Hubo un error al ejecutar el comando. Por favor, intenta de nuevo más tarde.').then(msg => {
+                setTimeout(() => msg.delete().catch(console.error), 5000);
+            });
+        }
     },
 }; 

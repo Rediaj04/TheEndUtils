@@ -28,13 +28,14 @@ Bot de Discord para la gestión de pruebas y administración del servidor The En
 - `??pass @usuario` - Notifica aprobación
 - `??nopass @usuario` - Notifica no aprobación
 - `??afk @usuario` - Marca usuario como AFK
+- `??reglas` - Muestra las reglas del test de ingreso
 
 ### Comandos Globales
 - `??kunno @usuario` - Kunnoniza la imagen de perfil de un usuario
 - `??avatar @usuario` - Muestra el avatar de un usuario en alta resolución
 - `??userinfo @usuario` - Muestra información detallada de un usuario
 - `??8ball <pregunta>` - Responde a tus preguntas de forma aleatoria
-- `??reglas` - Muestra las reglas del test de ingreso
+- `??ontop` - Muestra el poderío de The End
 - `??ayuda` - Muestra lista de comandos
 
 ### Comandos de Administración
