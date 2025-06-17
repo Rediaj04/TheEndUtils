@@ -1,23 +1,26 @@
-<p align="center">
-  <img 
-    src="https://capsule-render.vercel.app/api?type=waving&color=9b59b6,8e44ad&height=120&section=header&text=The%20End%20Utils%20🤖&fontSize=40&fontColor=ffffff&animation=twinkling" 
-    width="100%" 
-    alt="The End Utils Header" 
-  />
-</p>
+# The End Utils 🤖
 
-Bot de Discord para la gestión de pruebas y administración del servidor **The End**.
+<div align="center">
+  <img src="Logo.png" alt="The End Utils Logo" width="200"/>
+  
+  [![Discord](https://img.shields.io/discord/1227460757524975678?color=7289DA&label=Discord&logo=discord&logoColor=white)](https://discord.gg/3pFVWqJfaW)
+  [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+  [![Node.js](https://img.shields.io/badge/Node.js-v18-green.svg)](https://nodejs.org/)
+</div>
 
----
-## Características ✨
+## 📝 Descripción
 
-- Sistema de pruebas con notificaciones automáticas
-- Gestión de roles y permisos
-- Comandos de administración
-- Sistema AFK con notificaciones
-- Plantillas y reglas predefinidas
+Bot de Discord para la gestión de pruebas y administración del servidor The End. Diseñado para facilitar el proceso de pruebas y mantener un ambiente organizado en el servidor.
 
-## Comandos Disponibles 🎮
+## ✨ Características
+
+- 🎯 Sistema de pruebas con notificaciones automáticas
+- 👥 Gestión de roles y permisos
+- ⚙️ Comandos de administración
+- ⏰ Sistema AFK con notificaciones
+- 📋 Plantillas y reglas predefinidas
+
+## 🎮 Comandos Disponibles
 
 ### Comandos de Testing
 - `??plantillas` - Muestra el formulario de solicitud
@@ -31,7 +34,7 @@ Bot de Discord para la gestión de pruebas y administración del servidor **The 
 - `??roles` - Gestiona roles permitidos
 - `??ayuda` - Muestra lista de comandos
 
-## Instalación 🚀
+## 🚀 Instalación
 
 1. Clona el repositorio:
 ```bash
@@ -54,13 +57,13 @@ DISCORD_TOKEN=tu_token_aqui
 npm run dev
 ```
 
-## Requisitos 📋
+## 📋 Requisitos
 
 - Node.js v18 o superior
 - npm o yarn
 - Token de bot de Discord válido
 
-## Estructura del Proyecto 📁
+## 📁 Estructura del Proyecto
 
 ```
 TheEndUtils/
@@ -76,7 +79,7 @@ TheEndUtils/
 └── README.md
 ```
 
-## Contribución 🤝
+## 🤝 Contribución
 
 1. Haz fork del proyecto
 2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
@@ -84,6 +87,14 @@ TheEndUtils/
 4. Push a la rama (`git push origin feature/AmazingFeature`)
 5. Abre un Pull Request
 
-## Licencia 📄
+## 📄 Licencia
 
-Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles. 
+Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
+
+## 🌟 Créditos
+
+<div align="center">
+  <img src="https://github.com/Rediaj04.png" width="100" style="border-radius: 50%"/>
+  <br/>
+  Desarrollado con ❤️ por [Rediaj04](https://github.com/Rediaj04) para The End Community.
+</div> 
