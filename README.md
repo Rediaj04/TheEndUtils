@@ -32,6 +32,7 @@ Bot de Discord para la gestión de pruebas y administración del servidor The En
 
 ### Comandos Globales
 - `??kunno @usuario` - Kunnoniza la imagen de perfil de un usuario
+- `??kiss @usuario` - Envía un beso a un usuario
 - `??avatar @usuario` - Muestra el avatar de un usuario en alta resolución
 - `??userinfo @usuario` - Muestra información detallada de un usuario
 - `??8ball <pregunta>` - Responde a tus preguntas de forma aleatoria
