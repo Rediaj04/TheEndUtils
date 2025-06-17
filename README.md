@@ -24,7 +24,6 @@ Bot de Discord para la gestión de pruebas y administración del servidor The En
 
 ### Comandos de Testing
 - `??plantillas` - Muestra el formulario de solicitud
-- `??reglas` - Muestra las reglas del test
 - `??test @usuario` - Finalización del test
 - `??pass @usuario` - Notifica aprobación
 - `??nopass @usuario` - Notifica no aprobación
@@ -32,6 +31,10 @@ Bot de Discord para la gestión de pruebas y administración del servidor The En
 
 ### Comandos Globales
 - `??kunno @usuario` - Kunnoniza la imagen de perfil de un usuario
+- `??avatar @usuario` - Muestra el avatar de un usuario en alta resolución
+- `??userinfo @usuario` - Muestra información detallada de un usuario
+- `??8ball <pregunta>` - Responde a tus preguntas de forma aleatoria
+- `??reglas` - Muestra las reglas del test de ingreso
 - `??ayuda` - Muestra lista de comandos
 
 ### Comandos de Administración
