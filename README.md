@@ -38,6 +38,7 @@ Bot de Discord para la gestión de pruebas y administración del servidor The En
 - `??8ball <pregunta>` - Responde a tus preguntas de forma aleatoria
 - `??ontop` - Muestra el poderío de The End
 - `??redes` o `??fan` - Muestra las redes sociales
+- `??infobot` - Muestra información sobre el bot
 - `??ayuda` - Muestra lista de comandos
 
 ### Comandos de Administración
