@@ -23,7 +23,20 @@ module.exports = {
             { name: `${emojis.globe} Redes`, value: `\`${config.prefix}redes\` o \`${config.prefix}fan\`\nMuestra las redes sociales` },
             { name: `${emojis.bot} Info Bot`, value: `\`${config.prefix}infobot\`\nMuestra información sobre el bot` },
             { name: `${emojis.help} Ayuda`, value: `\`${config.prefix}ayuda\`\nMuestra esta lista de comandos` },
-            { name: '💀 Venezuela', value: `\`${config.prefix}venezuela @usuario\` o \`${config.prefix}veneco @usuario\`\nVenezolaniza la imagen de perfil de un usuario con efecto esqueleto` }
+            { name: '💀 Venezuela', value: `\`${config.prefix}venezuela @usuario\` o \`${config.prefix}veneco @usuario\`\nVenezolaniza la imagen de perfil de un usuario con efecto esqueleto` },
+            { name: '🤗 Hug', value: `\`${config.prefix}hug @usuario\` o \`${config.prefix}abrazar @usuario\`\nAbraza a un usuario` },
+            { name: '👋 Slap', value: `\`${config.prefix}slap @usuario\` o \`${config.prefix}bofetada @usuario\`\nAbofetea a un usuario` },
+            { name: '🫶 Pat', value: `\`${config.prefix}pat @usuario\` o \`${config.prefix}palmadita @usuario\`\nDa una palmadita a un usuario` },
+            { name: '😡 Baka', value: `\`${config.prefix}baka @usuario\` o \`${config.prefix}tonto @usuario\`\nLlama tonto a un usuario` },
+            { name: '🥊 Punch', value: `\`${config.prefix}punch @usuario\` o \`${config.prefix}puñetazo @usuario\`\nDa un puñetazo a un usuario` },
+            { name: '😳 Blush', value: `\`${config.prefix}blush @usuario\` o \`${config.prefix}sonrojarse @usuario\`\nTe sonrojas o haces sonrojar a alguien` },
+            { name: '😭 Cry', value: `\`${config.prefix}cry @usuario\` o \`${config.prefix}llorar @usuario\`\nLlora o hace llorar a alguien` },
+            { name: '😂 Laugh', value: `\`${config.prefix}laugh @usuario\` o \`${config.prefix}reir @usuario\`\nRíe o hace reír a alguien` },
+            { name: '👉 Poke', value: `\`${config.prefix}poke @usuario\` o \`${config.prefix}tocar @usuario\`\nToca a un usuario` },
+            { name: '🫂 Cuddle', value: `\`${config.prefix}cuddle @usuario\` o \`${config.prefix}acurrucar @usuario\`\nAcurruca a un usuario` },
+            { name: '👋 Wave', value: `\`${config.prefix}wave @usuario\` o \`${config.prefix}saludar @usuario\`\nSaluda a un usuario` },
+            { name: '😉 Wink', value: `\`${config.prefix}wink @usuario\` o \`${config.prefix}guiñar @usuario\`\nGuiña a un usuario` },
+            { name: '🤦 Facepalm', value: `\`${config.prefix}facepalm @usuario\` o \`${config.prefix}palmadacara @usuario\`\nPalmada en la cara (facepalm)` }
         ];
         const COMMANDS_PER_PAGE = 6;
         function createGlobalEmbed(page = 0) {

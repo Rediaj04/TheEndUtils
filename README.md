@@ -36,6 +36,19 @@ Bot de Discord para la gestión de pruebas y administración del servidor The En
 - `??peru @usuario` - Peruaniza la imagen de perfil de un usuario
 - `??venezuela @usuario` o `??veneco @usuario` - Venezolaniza la imagen de perfil de un usuario con efecto esqueleto
 - `??kiss @usuario` - Envía un beso a un usuario
+- `??hug @usuario` o `??abrazar @usuario` - Abraza a un usuario
+- `??slap @usuario` o `??bofetada @usuario` - Abofetea a un usuario
+- `??pat @usuario` o `??palmadita @usuario` - Da una palmadita a un usuario
+- `??baka @usuario` o `??tonto @usuario` - Llama tonto a un usuario
+- `??punch @usuario` o `??puñetazo @usuario` - Da un puñetazo a un usuario
+- `??blush @usuario` o `??sonrojarse @usuario` - Te sonrojas o haces sonrojar a alguien
+- `??cry @usuario` o `??llorar @usuario` - Llora o hace llorar a alguien
+- `??laugh @usuario` o `??reir @usuario` - Ríe o hace reír a alguien
+- `??poke @usuario` o `??tocar @usuario` - Toca a un usuario
+- `??cuddle @usuario` o `??acurrucar @usuario` - Acurruca a un usuario
+- `??wave @usuario` o `??saludar @usuario` - Saluda a un usuario
+- `??wink @usuario` o `??guiñar @usuario` - Guiña a un usuario
+- `??facepalm @usuario` o `??palmadacara @usuario` - Palmada en la cara (facepalm)
 - `??avatar @usuario` - Muestra el avatar de un usuario en alta resolución
 - `??userinfo @usuario` - Muestra información detallada de un usuario
 - `??8ball <pregunta>` - Responde a tus preguntas de forma aleatoria
