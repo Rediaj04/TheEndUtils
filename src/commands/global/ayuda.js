@@ -5,6 +5,7 @@ const errores = require('../../utils/errores');
 
 module.exports = {
     name: 'ayuda',
+    aliases: ['help'],
     description: 'Muestra los comandos útiles del test',
     async execute(message, args, client) {
         const { emojis } = styles;
@@ -122,34 +123,32 @@ module.exports = {
                     .addComponents(
                         new ButtonBuilder()
                             .setCustomId('help_main')
-                            .setLabel('Principal')
-                            .setStyle(ButtonStyle.Danger),
-                        new ButtonBuilder()
-                            .setCustomId('help_testing')
-                            .setLabel('Testing')
+                            .setLabel('🏠 Principal')
                             .setStyle(ButtonStyle.Danger),
                         new ButtonBuilder()
                             .setCustomId('help_global')
-                            .setLabel('Globales')
+                            .setLabel('🌐 Globales')
+                            .setStyle(ButtonStyle.Danger),
+                        new ButtonBuilder()
+                            .setCustomId('help_nsfw')
+                            .setLabel('🔞 NSFW')
                             .setStyle(ButtonStyle.Danger)
                     );
-                
                 const row2 = new ActionRowBuilder()
                     .addComponents(
                         new ButtonBuilder()
-                            .setCustomId('help_nsfw')
-                            .setLabel('NSFW')
+                            .setCustomId('help_testing')
+                            .setLabel('🧪 Testing')
                             .setStyle(ButtonStyle.Danger),
                         new ButtonBuilder()
                             .setCustomId('help_admin')
-                            .setLabel('Admin')
+                            .setLabel('🛡️ Admin')
                             .setStyle(ButtonStyle.Danger),
                         new ButtonBuilder()
                             .setCustomId('help_info')
-                            .setLabel('Info')
+                            .setLabel('ℹ️ Info')
                             .setStyle(ButtonStyle.Danger)
                     );
-                
                 return [row1, row2];
             }
             // Solo para global: paginación y volver
@@ -162,7 +161,7 @@ module.exports = {
                         .setDisabled(page === 0),
                     new ButtonBuilder()
                         .setCustomId('help_main')
-                        .setLabel('Volver')
+                        .setLabel('🏠 Volver')
                         .setStyle(ButtonStyle.Danger),
                     new ButtonBuilder()
                         .setCustomId('help_global_next')
