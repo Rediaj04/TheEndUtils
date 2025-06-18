@@ -10,8 +10,38 @@ module.exports = {
         const { emojis } = styles;
         const user = message.mentions.users.first() || message.author;
 
+        // --- PAGINACIÓN GLOBAL ---
+        // Lista de comandos globales (nombre, descripción)
+        const globalCommands = [
+            { name: `${emojis.fun} Kunno`, value: `\`${config.prefix}kunno @usuario\`\nKunnoniza la imagen de perfil de un usuario` },
+            { name: `${emojis.heart} Kiss`, value: `\`${config.prefix}kiss @usuario\`\nEnvía un beso a un usuario` },
+            { name: '🕊️ Peru', value: `\`${config.prefix}peru @usuario\`\nPeruaniza la imagen de perfil de un usuario` },
+            { name: `${emojis.image} Avatar`, value: `\`${config.prefix}avatar @usuario\`\nMuestra el avatar de un usuario en alta resolución` },
+            { name: `${emojis.user} User Info`, value: `\`${config.prefix}userinfo @usuario\`\nMuestra información detallada de un usuario` },
+            { name: `${emojis.magic} 8Ball`, value: `\`${config.prefix}8ball <pregunta>\`\nResponde a tus preguntas de forma aleatoria` },
+            { name: `${emojis.title} Ontop`, value: `\`${config.prefix}ontop\`\nMuestra el poderío de The End` },
+            { name: `${emojis.globe} Redes`, value: `\`${config.prefix}redes\` o \`${config.prefix}fan\`\nMuestra las redes sociales` },
+            { name: `${emojis.bot} Info Bot`, value: `\`${config.prefix}infobot\`\nMuestra información sobre el bot` },
+            { name: `${emojis.help} Ayuda`, value: `\`${config.prefix}ayuda\`\nMuestra esta lista de comandos` },
+            { name: '💀 Venezuela', value: `\`${config.prefix}venezuela @usuario\` o \`${config.prefix}veneco @usuario\`\nVenezolaniza la imagen de perfil de un usuario con efecto esqueleto` }
+        ];
+        const COMMANDS_PER_PAGE = 6;
+        function createGlobalEmbed(page = 0) {
+            const embed = new EmbedBuilder()
+                .setColor('#FF0000')
+                .setTitle(`${emojis.help} Comandos Globales`)
+                .setDescription('*Disponibles para todos los usuarios*')
+                .setFooter({ text: `Página ${page + 1} de ${Math.ceil(globalCommands.length / COMMANDS_PER_PAGE)} • The End Utils - Tu asistente perfecto 💖` })
+                .setTimestamp();
+            const start = page * COMMANDS_PER_PAGE;
+            const end = start + COMMANDS_PER_PAGE;
+            embed.addFields(globalCommands.slice(start, end));
+            return embed;
+        }
+        // --- FIN PAGINACIÓN GLOBAL ---
+
         // Función para crear el embed con la categoría seleccionada
-        function createHelpEmbed(category = 'main') {
+        function createHelpEmbed(category = 'main', page = 0) {
             const embed = new EmbedBuilder()
                 .setColor('#FF0000')
                 .setFooter({ text: 'The End Utils - Tu asistente perfecto 💖' })
@@ -39,22 +69,7 @@ module.exports = {
                     break;
 
                 case 'global':
-                    embed.setTitle(`${emojis.help} Comandos Globales`)
-                        .setDescription('*Disponibles para todos los usuarios*')
-                        .addFields(
-                            { name: `${emojis.fun} Kunno`, value: `\`${config.prefix}kunno @usuario\`\nKunnoniza la imagen de perfil de un usuario` },
-                            { name: `${emojis.heart} Kiss`, value: `\`${config.prefix}kiss @usuario\`\nEnvía un beso a un usuario` },
-                            { name: '🕊️ Peru', value: `\`${config.prefix}peru @usuario\`\nPeruaniza la imagen de perfil de un usuario` },
-                            { name: `${emojis.image} Avatar`, value: `\`${config.prefix}avatar @usuario\`\nMuestra el avatar de un usuario en alta resolución` },
-                            { name: `${emojis.user} User Info`, value: `\`${config.prefix}userinfo @usuario\`\nMuestra información detallada de un usuario` },
-                            { name: `${emojis.magic} 8Ball`, value: `\`${config.prefix}8ball <pregunta>\`\nResponde a tus preguntas de forma aleatoria` },
-                            { name: `${emojis.title} Ontop`, value: `\`${config.prefix}ontop\`\nMuestra el poderío de The End` },
-                            { name: `${emojis.globe} Redes`, value: `\`${config.prefix}redes\` o \`${config.prefix}fan\`\nMuestra las redes sociales` },
-                            { name: `${emojis.bot} Info Bot`, value: `\`${config.prefix}infobot\`\nMuestra información sobre el bot` },
-                            { name: `${emojis.help} Ayuda`, value: `\`${config.prefix}ayuda\`\nMuestra esta lista de comandos` },
-                            { name: '💀 Venezuela', value: `\`${config.prefix}venezuela @usuario\` o \`${config.prefix}veneco @usuario\`\nVenezolaniza la imagen de perfil de un usuario con efecto esqueleto` }
-                        );
-                    break;
+                    return createGlobalEmbed(page);
 
                 case 'admin':
                     embed.setTitle(`${emojis.admin} Comandos de Administración`)
@@ -77,35 +92,60 @@ module.exports = {
         }
 
         // Crear los botones
-        const row = new ActionRowBuilder()
-            .addComponents(
-                new ButtonBuilder()
-                    .setCustomId('help_main')
-                    .setLabel('Principal')
-                    .setStyle(ButtonStyle.Danger),
-                new ButtonBuilder()
-                    .setCustomId('help_testing')
-                    .setLabel('Testing')
-                    .setStyle(ButtonStyle.Danger),
-                new ButtonBuilder()
-                    .setCustomId('help_global')
-                    .setLabel('Globales')
-                    .setStyle(ButtonStyle.Danger),
-                new ButtonBuilder()
-                    .setCustomId('help_admin')
-                    .setLabel('Admin')
-                    .setStyle(ButtonStyle.Danger),
-                new ButtonBuilder()
-                    .setCustomId('help_info')
-                    .setLabel('Info')
-                    .setStyle(ButtonStyle.Danger)
-            );
+        function getRow(category, page, maxPage) {
+            if (category !== 'global') {
+                return new ActionRowBuilder()
+                    .addComponents(
+                        new ButtonBuilder()
+                            .setCustomId('help_main')
+                            .setLabel('Principal')
+                            .setStyle(ButtonStyle.Danger),
+                        new ButtonBuilder()
+                            .setCustomId('help_testing')
+                            .setLabel('Testing')
+                            .setStyle(ButtonStyle.Danger),
+                        new ButtonBuilder()
+                            .setCustomId('help_global')
+                            .setLabel('Globales')
+                            .setStyle(ButtonStyle.Danger),
+                        new ButtonBuilder()
+                            .setCustomId('help_admin')
+                            .setLabel('Admin')
+                            .setStyle(ButtonStyle.Danger),
+                        new ButtonBuilder()
+                            .setCustomId('help_info')
+                            .setLabel('Info')
+                            .setStyle(ButtonStyle.Danger)
+                    );
+            }
+            // Solo para global: paginación y volver
+            return new ActionRowBuilder()
+                .addComponents(
+                    new ButtonBuilder()
+                        .setCustomId('help_global_prev')
+                        .setLabel('⬅️ Anterior')
+                        .setStyle(ButtonStyle.Secondary)
+                        .setDisabled(page === 0),
+                    new ButtonBuilder()
+                        .setCustomId('help_main')
+                        .setLabel('Volver')
+                        .setStyle(ButtonStyle.Danger),
+                    new ButtonBuilder()
+                        .setCustomId('help_global_next')
+                        .setLabel('Siguiente ➡️')
+                        .setStyle(ButtonStyle.Secondary)
+                        .setDisabled(page === maxPage)
+                );
+        }
+
+        let globalPage = 0;
+        const maxGlobalPage = Math.ceil(globalCommands.length / COMMANDS_PER_PAGE) - 1;
 
         try {
             // Enviar el mensaje inicial como respuesta
             const helpMessage = await message.reply({
                 embeds: [createHelpEmbed('main')],
-                components: [row],
+                components: [getRow('main', 0, maxGlobalPage)],
                 files: ['./src/assets/Banner.gif']
             });
 
@@ -121,19 +161,49 @@ module.exports = {
                         ephemeral: true
                     });
                 }
-
-                const category = interaction.customId.split('_')[1];
+                // Manejo de paginación global
+                if (interaction.customId === 'help_global_next') {
+                    globalPage = Math.min(globalPage + 1, maxGlobalPage);
+                    await interaction.update({
+                        embeds: [createHelpEmbed('global', globalPage)],
+                        components: [getRow('global', globalPage, maxGlobalPage)],
+                        files: [],
+                        attachments: []
+                    });
+                    return;
+                }
+                if (interaction.customId === 'help_global_prev') {
+                    globalPage = Math.max(globalPage - 1, 0);
+                    await interaction.update({
+                        embeds: [createHelpEmbed('global', globalPage)],
+                        components: [getRow('global', globalPage, maxGlobalPage)],
+                        files: [],
+                        attachments: []
+                    });
+                    return;
+                }
+                let category = interaction.customId.split('_')[1];
+                if (category === 'global') {
+                    globalPage = 0;
+                }
                 if (category === 'main') {
                     await interaction.update({
                         embeds: [createHelpEmbed(category)],
-                        components: [row],
+                        components: [getRow(category, globalPage, maxGlobalPage)],
                         files: ['./src/assets/Banner.gif'],
+                        attachments: []
+                    });
+                } else if (category === 'global') {
+                    await interaction.update({
+                        embeds: [createHelpEmbed('global', globalPage)],
+                        components: [getRow('global', globalPage, maxGlobalPage)],
+                        files: [],
                         attachments: []
                     });
                 } else {
                     await interaction.update({
                         embeds: [createHelpEmbed(category)],
-                        components: [row],
+                        components: [getRow(category, globalPage, maxGlobalPage)],
                         files: [],
                         attachments: []
                     });
