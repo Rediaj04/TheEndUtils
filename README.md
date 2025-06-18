@@ -67,6 +67,22 @@ Bot de Discord para la gestión de pruebas y administración del servidor The En
 - `??roles` - Gestiona roles permitidos
 - `??clear <cantidad>` - Borra hasta 50 mensajes en el canal actual
 
+### Comandos de Minecraft
+
+### `??tier <usuario_minecraft>`
+Muestra las tiers de un jugador de Minecraft usando la API de McTiers y muestra la skin 3D estilo busto del jugador.
+
+- Modalidades soportadas: UHC, Axe, Pot, Nethop
+- Si el jugador no tiene tier en alguna modalidad, se muestra como "Unranked".
+- Ejemplo de uso: `??tier _060`
+
+### `??tierv2 <usuario_minecraft>`
+Muestra las tiers v2 de un jugador de Minecraft usando la API de McTiers.io y muestra la skin 3D estilo busto del jugador.
+
+- Modalidades soportadas: Crystal (emoji de vanilla), UHC, Pot, NethOP (emoji de nethop), SMP, Sword, Axe, Elytra (emoji de elytra)
+- Si el jugador no tiene tier en alguna modalidad, se muestra como "Unranked".
+- Ejemplo de uso: `??tierv2 Marlowww`
+
 ## 🛡️ Sistema de Logs de Comandos
 
 Cada vez que un usuario ejecuta un comando, el bot registra automáticamente la acción en un canal privado de logs (<#1384905115617591380>). El log incluye:

@@ -111,6 +111,15 @@ module.exports = {
                     embed.setTitle(`${emojis.info} Información Adicional`)
                         .setDescription('• Los mensajes originales se eliminan automáticamente\n• El comando AFK notificará al staff después de 10 minutos\n• Los comandos NSFW solo funcionan en canales NSFW\n• Usa `??ayuda` para ver esta lista');
                     break;
+
+                case 'minecraft':
+                    embed.setTitle('⛏️ Comandos de Minecraft')
+                        .setDescription('*Comandos útiles para jugadores de Minecraft en The End Community*')
+                        .addFields(
+                            { name: '⛏️ Tier', value: `\`${config.prefix}tier <usuario_minecraft>\`\nMuestra las tiers de un jugador de Minecraft usando la API de McTiers y la skin 3D estilo busto.` },
+                            { name: '⛏️ Tier v2', value: `\`${config.prefix}tierv2 <usuario_minecraft>\`\nMuestra las tiers v2 de un jugador de Minecraft usando la API de McTiers.io (Crystal, Elytra, etc).` }
+                        );
+                    break;
             }
 
             return embed;
@@ -132,6 +141,10 @@ module.exports = {
                         new ButtonBuilder()
                             .setCustomId('help_nsfw')
                             .setLabel('🔞 NSFW')
+                            .setStyle(ButtonStyle.Danger),
+                        new ButtonBuilder()
+                            .setCustomId('help_minecraft')
+                            .setLabel('⛏️ Minecraft')
                             .setStyle(ButtonStyle.Danger)
                     );
                 const row2 = new ActionRowBuilder()
