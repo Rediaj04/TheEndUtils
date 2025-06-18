@@ -14,7 +14,7 @@ module.exports = {
             // Verificar si el usuario tiene permisos de administrador
             if (!message.member.permissions.has('Administrator')) {
                 const errorMsg = await message.reply(errores.SOLO_ADMIN + ' Solo los administradores pueden ver las reglas.');
-                setTimeout(() => errorMsg.delete().catch(console.error), 5000);
+                setTimeout(() => errorMsg.delete().catch(console.error), errores.TIEMPO_BORRADO_ERROR);
                 return;
             }
 

@@ -1,4 +1,7 @@
+const TIEMPO_BORRADO_ERROR = 5000; // Tiempo en milisegundos para borrar mensajes de error
+
 module.exports = {
+    TIEMPO_BORRADO_ERROR,
     PERMISO_DENEGADO: '❌ No tienes permisos para ejecutar este comando.',
     SOLO_ADMIN: '❌ Solo los administradores pueden usar este comando.',
     SOLO_TESTING: '❌ Solo testers o administradores pueden usar este comando.',

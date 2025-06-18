@@ -22,9 +22,9 @@ module.exports = {
 
         // Validar la cantidad
         if (isNaN(amount)) {
-            const errorMsg = await message.channel.send(errores.CANTIDAD_INVALIDA(`$${config.prefix}clear 10`));
+            const errorMsg = await message.channel.send(errores.CANTIDAD_INVALIDA(`${config.prefix}clear 10`));
             await message.delete().catch(console.error);
-            setTimeout(() => errorMsg.delete().catch(console.error), 5000);
+            setTimeout(() => errorMsg.delete().catch(console.error), errores.TIEMPO_BORRADO_ERROR);
             return;
         }
 
@@ -32,7 +32,7 @@ module.exports = {
         if (amount < 1 || amount > 50) {
             const errorMsg = await message.channel.send(errores.LIMITE_CANTIDAD);
             await message.delete().catch(console.error);
-            setTimeout(() => errorMsg.delete().catch(console.error), 5000);
+            setTimeout(() => errorMsg.delete().catch(console.error), errores.TIEMPO_BORRADO_ERROR);
             return;
         }
 
@@ -47,7 +47,7 @@ module.exports = {
         } catch (error) {
             console.error('Error al borrar mensajes:', error);
             const errorMsg = await message.channel.send(errores.ERROR_BORRAR_MENSAJES);
-            setTimeout(() => errorMsg.delete().catch(console.error), 5000);
+            setTimeout(() => errorMsg.delete().catch(console.error), errores.TIEMPO_BORRADO_ERROR);
         }
     },
 }; 

@@ -11,8 +11,8 @@ module.exports = {
             const user = message.mentions.users.first();
             
             if (!user) {
-                const errorMsg = await message.reply(errores.FALTA_USUARIO(`$${config.prefix}kiss @usuario`));
-                setTimeout(() => errorMsg.delete().catch(console.error), 5000);
+                const errorMsg = await message.reply(errores.FALTA_USUARIO(`${config.prefix}kiss @usuario`));
+                setTimeout(() => errorMsg.delete().catch(console.error), errores.TIEMPO_BORRADO_ERROR);
                 return;
             }
 

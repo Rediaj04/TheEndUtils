@@ -18,9 +18,9 @@ module.exports = {
         // Verificar si se mencionó a un usuario
         const user = message.mentions.users.first();
         if (!user) {
-            const errorMsg = await message.reply(errores.FALTA_USUARIO(`$${config.prefix}pass @usuario`));
-            setTimeout(() => errorMsg.delete().catch(console.error), 2000);
-            setTimeout(() => message.delete().catch(console.error), 2000);
+            const errorMsg = await message.reply(errores.FALTA_USUARIO(`${config.prefix}pass @usuario`));
+            setTimeout(() => errorMsg.delete().catch(console.error), errores.TIEMPO_BORRADO_ERROR);
+            setTimeout(() => message.delete().catch(console.error), errores.TIEMPO_BORRADO_ERROR);
             return;
         }
 
