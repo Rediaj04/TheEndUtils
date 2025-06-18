@@ -46,6 +46,18 @@ Bot de Discord para la gestión de pruebas y administración del servidor The En
 - `??roles` - Gestiona roles permitidos
 - `??clear <cantidad>` - Borra hasta 50 mensajes en el canal actual
 
+## 🛡️ Sistema de Logs de Comandos
+
+Cada vez que un usuario ejecuta un comando, el bot registra automáticamente la acción en un canal privado de logs (<#1384905115617591380>). El log incluye:
+
+- Comando usado
+- Usuario (mención e ID)
+- Canal (mención e ID)
+- Argumentos
+- Fecha y hora
+
+Esto permite un control total y auditoría de todas las acciones administrativas y de uso del bot.
+
 ## 🚀 Instalación
 
 1. Clona el repositorio:
