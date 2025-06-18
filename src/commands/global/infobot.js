@@ -38,7 +38,7 @@ module.exports = {
 
             await message.reply({
                 embeds: [infobotEmbed],
-                files: ['./assets/Banner.gif']
+                files: ['./src/assets/Banner.gif']
             });
         } catch (error) {
             console.error('Error en el comando infobot:', error);
