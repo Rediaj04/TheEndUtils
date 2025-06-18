@@ -1,7 +1,8 @@
 # The End Utils 🤖
 
 <div align="center">
-  <img src="Logo.gif" alt="The End Utils Logo" width="200"/>
+  <img src="src/assets/Logo.gif" alt="The End Utils Logo" width="180"/>
+  <br/>
   
   [![Discord](https://img.shields.io/discord/1227460757524975678?color=7289DA&label=Discord&logo=discord&logoColor=white)](https://discord.gg/3pFVWqJfaW)
   [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
@@ -105,6 +106,8 @@ Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) par
 ## 🌟 Créditos
 
 <div align="center">
+  <img src="src/assets/Banner.gif" alt="The End Utils Banner" width="400"/>
+  <br/>
   <img src="https://github.com/Rediaj04.png" width="100" style="border-radius: 50%"/>
   <br/>
   Desarrollado con ❤️ por [Rediaj04](https://github.com/Rediaj04) para The End Community.
