@@ -16,6 +16,7 @@ module.exports = {
         const globalCommands = [
             { name: `${emojis.fun} Kunno`, value: `\`${config.prefix}kunno @usuario\`\nKunnoniza la imagen de perfil de un usuario` },
             { name: `${emojis.heart} Kiss`, value: `\`${config.prefix}kiss @usuario\`\nEnvía un beso a un usuario` },
+            { name: '🇨🇴 Colombia', value: `\`${config.prefix}colombiano @usuario\` o \`${config.prefix}colombia @usuario\`\nColombianiza la imagen de perfil de un usuario con gorra, gafas y polvo blanco` },
             { name: '🕊️ Peru', value: `\`${config.prefix}peru @usuario\`\nPeruaniza la imagen de perfil de un usuario` },
             { name: `${emojis.image} Avatar`, value: `\`${config.prefix}avatar @usuario\`\nMuestra el avatar de un usuario en alta resolución` },
             { name: `${emojis.user} User Info`, value: `\`${config.prefix}userinfo @usuario\`\nMuestra información detallada de un usuario` },

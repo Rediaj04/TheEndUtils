@@ -61,6 +61,7 @@ Un bot diseñado en las entrañas del abismo digital para servir al dominio supr
 ??8ball                # Oráculo infernal
 ??ontop                # Dominio de The End
 ??infobot              # Datos secretos del bot
+??colombiano @usuario   # Efecto Colombia (alias: ??colombia)
 ```
 </details>
 
