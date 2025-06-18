@@ -64,6 +64,7 @@ Un bot diseñado en las entrañas del abismo digital para servir al dominio supr
 ??colombiano @usuario   # Efecto Colombia (alias: ??colombia)
 ??dog                  # Perrito aleatorio y tierno
 ??cat / ??gato / ??gata   # Gatito aleatorio y adorable
+??random-user / ??userrandom / ??randomuser   # Usuario aleatorio con info completa
 ```
 </details>
 

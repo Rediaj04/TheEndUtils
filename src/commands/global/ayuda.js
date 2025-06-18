@@ -41,6 +41,7 @@ module.exports = {
             { name: '🤦 Facepalm', value: `\`${config.prefix}facepalm @usuario\` o \`${config.prefix}palmadacara @usuario\`\nPalmada en la cara (facepalm)` },
             { name: '🐶 Dog', value: `\`${config.prefix}dog\`\nMuestra una foto aleatoria de un perrito` },
             { name: '🐱 Cat', value: `\`${config.prefix}cat\` o \`${config.prefix}gato\` o \`${config.prefix}gata\`\nMuestra una foto aleatoria de un gatito` },
+            { name: '👤 Random User', value: `\`${config.prefix}random-user\` o \`${config.prefix}userrandom\` o \`${config.prefix}randomuser\`\nMuestra información de un usuario aleatorio` },
         ];
         const COMMANDS_PER_PAGE = 6;
         function createGlobalEmbed(page = 0) {
