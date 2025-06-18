@@ -38,7 +38,8 @@ module.exports = {
             { name: '🫂 Cuddle', value: `\`${config.prefix}cuddle @usuario\` o \`${config.prefix}acurrucar @usuario\`\nAcurruca a un usuario` },
             { name: '👋 Wave', value: `\`${config.prefix}wave @usuario\` o \`${config.prefix}saludar @usuario\`\nSaluda a un usuario` },
             { name: '😉 Wink', value: `\`${config.prefix}wink @usuario\` o \`${config.prefix}guiñar @usuario\`\nGuiña a un usuario` },
-            { name: '🤦 Facepalm', value: `\`${config.prefix}facepalm @usuario\` o \`${config.prefix}palmadacara @usuario\`\nPalmada en la cara (facepalm)` }
+            { name: '🤦 Facepalm', value: `\`${config.prefix}facepalm @usuario\` o \`${config.prefix}palmadacara @usuario\`\nPalmada en la cara (facepalm)` },
+            { name: '🐶 Dog', value: `\`${config.prefix}dog\`\nMuestra una foto aleatoria de un perrito` },
         ];
         const COMMANDS_PER_PAGE = 6;
         function createGlobalEmbed(page = 0) {

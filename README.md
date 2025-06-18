@@ -62,6 +62,7 @@ Un bot diseñado en las entrañas del abismo digital para servir al dominio supr
 ??ontop                # Dominio de The End
 ??infobot              # Datos secretos del bot
 ??colombiano @usuario   # Efecto Colombia (alias: ??colombia)
+??dog                  # Perrito aleatorio y tierno
 ```
 </details>
 
