@@ -1,138 +1,145 @@
-# The End Utils 🤖
+<h1 align="center">
+  🔥 The End Utils 🤖
+</h1>
 
-<div align="center">
-  <img src="src/assets/Logo.gif" alt="The End Utils Logo" width="180"/>
-  <br/>
-  
-  [![Discord](https://img.shields.io/discord/1227460757524975678?color=7289DA&label=Discord&logo=discord&logoColor=white)](https://discord.gg/3pFVWqJfaW)
-  [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-  [![Node.js](https://img.shields.io/badge/Node.js-v18-green.svg)](https://nodejs.org/)
-</div>
+<p align="center">
+  <img src="src/assets/Logo.gif" width="180" alt="Logo" />
+</p>
 
-## 📝 Descripción
+<p align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&duration=3000&pause=1000&color=FF0000&center=true&vCenter=true&width=435&lines=Bot+oscuro+y+diabólicamente+útil.;Dominando+The+End+con+poder+infernal.">
+</p>
 
-Bot de Discord para la gestión de pruebas y administración del servidor The End. Diseñado para facilitar el proceso de pruebas y mantener un ambiente organizado en el servidor.
+<p align="center">
+  <img src="https://img.shields.io/discord/1227460757524975678?color=7289DA&label=Discord&logo=discord&logoColor=white"/>
+  <img src="https://img.shields.io/badge/License-MIT-yellow.svg"/>
+  <img src="https://img.shields.io/badge/Node.js-v18-green.svg"/>
+</p>
 
-## ✨ Características
+---
 
-- 🎯 Sistema de pruebas con notificaciones automáticas
-- 👥 Gestión de roles y permisos
-- ⚙️ Comandos de administración
-- ⏰ Sistema AFK con notificaciones
-- 📋 Plantillas y reglas predefinidas
+## 🕯️ Descripción Oscura
 
-## 🎮 Comandos Disponibles
+Un bot diseñado en las entrañas del abismo digital para servir al dominio supremo de The End. Automatiza pruebas, castiga almas perdidas y mantiene el orden en tu imperio infernal.
 
-### Comandos de Testing
-- `??plantillas` - Muestra el formulario de solicitud
-- `??test @usuario` - Finalización del test
-- `??pass @usuario` - Notifica aprobación
-- `??nopass @usuario` - Notifica no aprobación
-- `??afk @usuario` - Marca usuario como AFK
-- `??reglas` - Muestra las reglas del test de ingreso
+---
 
-### Comandos Globales
-- `??kunno @usuario` - Kunnoniza la imagen de perfil de un usuario
-- `??peru @usuario` - Peruaniza la imagen de perfil de un usuario
-- `??venezuela @usuario` o `??veneco @usuario` - Venezolaniza la imagen de perfil de un usuario con efecto esqueleto
-- `??kiss @usuario` - Envía un beso a un usuario
-- `??hug @usuario` o `??abrazar @usuario` - Abraza a un usuario
-- `??slap @usuario` o `??bofetada @usuario` - Abofetea a un usuario
-- `??pat @usuario` o `??palmadita @usuario` - Da una palmadita a un usuario
-- `??baka @usuario` o `??tonto @usuario` - Llama tonto a un usuario
-- `??punch @usuario` o `??puñetazo @usuario` - Da un puñetazo a un usuario
-- `??blush @usuario` o `??sonrojarse @usuario` - Te sonrojas o haces sonrojar a alguien
-- `??cry @usuario` o `??llorar @usuario` - Llora o hace llorar a alguien
-- `??laugh @usuario` o `??reir @usuario` - Ríe o hace reír a alguien
-- `??poke @usuario` o `??tocar @usuario` - Toca a un usuario
-- `??cuddle @usuario` o `??acurrucar @usuario` - Acurruca a un usuario
-- `??wave @usuario` o `??saludar @usuario` - Saluda a un usuario
-- `??wink @usuario` o `??guiñar @usuario` - Guiña a un usuario
-- `??facepalm @usuario` o `??palmadacara @usuario` - Palmada en la cara (facepalm)
-- `??avatar @usuario` - Muestra el avatar de un usuario en alta resolución
-- `??userinfo @usuario` - Muestra información detallada de un usuario
-- `??8ball <pregunta>` - Responde a tus preguntas de forma aleatoria
-- `??ontop` - Muestra el poderío de The End
-- `??redes` o `??fan` - Muestra las redes sociales
-- `??infobot` - Muestra información sobre el bot
-- `??ayuda` - Muestra lista de comandos
+## ⚙️ Características Inferno
 
-### Comandos NSFW
-- `??waifu` - Muestra una imagen de waifu (solo canales NSFW)
-- `??neko` - Muestra una imagen de neko (solo canales NSFW)
-- `??trap` - Muestra una imagen de trap (solo canales NSFW)
-- `??blowjob` - Muestra una imagen de blowjob (solo canales NSFW)
+- 🩸 Sistema de pruebas con alertas demoníacas
+- 🔐 Control de roles y permisos oscuros
+- 🪓 Comandos de administración punitiva
+- 💤 Modo AFK espectral
+- 📜 Reglas y plantillas preconfiguradas del inframundo
+- ⛏️ Comandos Minecraft abismales
 
-### Comandos de Administración
-- `??roles` - Gestiona roles permitidos
-- `??clear <cantidad>` - Borra hasta 50 mensajes en el canal actual
+---
 
-### Comandos de Minecraft
+## 🔮 Comandos Destacados
 
-### `??tier <usuario_minecraft>`
-Muestra las tiers de un jugador de Minecraft usando la API de McTiers y muestra la skin 3D estilo busto del jugador.
+<details>
+<summary>🎭 Testing</summary>
 
-- Modalidades soportadas: UHC, Axe, Pot, Nethop
-- Si el jugador no tiene tier en alguna modalidad, se muestra como "Unranked".
-- Ejemplo de uso: `??tier _060`
+```bash
+??plantillas        # Formulario de solicitud
+??test @usuario     # Terminar prueba
+??pass @usuario     # Aprobación demoníaca
+??nopass @usuario   # Condena al olvido
+??afk @usuario      # Marca como alma errante
+??reglas            # Leyes del ingreso
+```
+</details>
 
-### `??tierv2 <usuario_minecraft>`
-Muestra las tiers v2 de un jugador de Minecraft usando la API de McTiers.io y muestra la skin 3D estilo busto del jugador.
+<details>
+<summary>💀 Globales</summary>
 
-- Modalidades soportadas: Crystal (emoji de vanilla), UHC, Pot, NethOP (emoji de nethop), SMP, Sword, Axe, Elytra (emoji de elytra)
-- Si el jugador no tiene tier en alguna modalidad, se muestra como "Unranked".
-- Ejemplo de uso: `??tierv2 Marlowww`
+```bash
+??kunno @usuario       # Kunnificación
+??peru @usuario        # Efecto Perú
+??veneco @usuario      # Efecto Venezuela esquelético
+??kiss/hug/slap...     # Interacciones oscuras
+??8ball                # Oráculo infernal
+??ontop                # Dominio de The End
+??infobot              # Datos secretos del bot
+```
+</details>
 
-## 🛡️ Sistema de Logs de Comandos
+<details>
+<summary>⛏️ Minecraft</summary>
 
-Cada vez que un usuario ejecuta un comando, el bot registra automáticamente la acción en un canal privado de logs (<#1384905115617591380>). El log incluye:
+```bash
+??tier <usuario>    # Tiers abismales (McTiers.com)
+??tierv2 <usuario>  # Tiers v2 (McTiers.io, Crystal/Elytra)
+```
+</details>
 
-- Comando usado
-- Usuario (mención e ID)
-- Canal (mención e ID)
-- Argumentos
-- Fecha y hora
+<details>
+<summary>🔞 NSFW</summary>
 
-Esto permite un control total y auditoría de todas las acciones administrativas y de uso del bot.
+```bash
+??waifu / ??neko / ??trap / ??blowjob
+(solo para los canales malditos)
+```
+</details>
 
-## 🚀 Instalación
+<details>
+<summary>🧠 Administración</summary>
 
-1. Clona el repositorio:
+```bash
+??roles           # Gestión del poder
+??clear <número>  # Exorcismo de mensajes
+```
+</details>
+
+---
+
+## 🧾 Logs del Más Allá
+Cada acción queda grabada en piedra infernal (<#1384905115617591380>), con:
+
+- 🧍 Usuario (ID)
+- 🔮 Comando invocado
+- 🕳️ Canal e ID
+- ⏳ Fecha infernal
+
+---
+
+## 🧪 Instalación del Ritual
+
 ```bash
 git clone https://github.com/Rediaj04/TheEndUtils.git
 cd TheEndUtils
-```
-
-2. Instala las dependencias:
-```bash
 npm install
 ```
 
-3. Crea un archivo `.env` en la raíz del proyecto:
+Crea tu grimorio `.env`:
 ```env
 DISCORD_TOKEN=tu_token_aqui
 ```
 
-4. Inicia el bot:
+Y ejecuta el conjuro:
 ```bash
 npm run dev
 ```
 
-## 📋 Requisitos
+---
 
-- Node.js v18 o superior
-- npm o yarn
-- Token de bot de Discord válido
+## 🐉 Requisitos del Grimorio
+- Node.js v18+
+- Discord Token
+- Almas frescas y código limpio
 
-## 📁 Estructura del Proyecto
+---
 
-```
+## 🧩 Estructura
+
+```pgsql
 TheEndUtils/
 ├── src/
 │   ├── commands/
 │   │   ├── admin/
 │   │   ├── global/
-│   │   └── testing/
+│   │   ├── testing/
+│   │   └── minecraft/
 │   ├── utils/
 │   └── index.js
 ├── .env
@@ -140,24 +147,43 @@ TheEndUtils/
 └── README.md
 ```
 
-## 🤝 Contribución
+---
 
-1. Haz fork del proyecto
-2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abre un Pull Request
+## 🩷 Contribución de los Discípulos
 
-## 📄 Licencia
+```bash
+# Haz fork y comienza tu hechizo
+git checkout -b feature/MaldicionNueva
+git commit -m "Invoca: Maldición Nueva"
+git push origin feature/MaldicionNueva
+# Abre un portal (Pull Request)
+```
 
-Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
+---
 
-## 🌟 Créditos
+## 📜 Licencia
+Bajo el contrato infernal de la MIT. Consulta LICENSE.
 
-<div align="center">
-  <img src="src/assets/Banner.gif" alt="The End Utils Banner" width="400"/>
-  <br/>
-  <img src="https://github.com/Rediaj04.png" width="100" style="border-radius: 50%"/>
-  <br/>
-  Desarrollado con ❤️ por [Rediaj04](https://github.com/Rediaj04) para The End Community.
-</div> 
+---
+
+## 🕯️ Créditos del Culto
+<p align="center"> <img src="src/assets/Banner.gif" alt="Banner" width="400"/><br/><br/> <img src="https://github.com/Rediaj04.png" width="100" style="border-radius: 50%" /> </p>
+<p align="center"> Hecho con sangre y JavaScript por <a href="https://github.com/Rediaj04">Rediaj04</a> </p>
+
+---
+
+## 🙏 Agradecimientos y Créditos
+
+<p align="center">
+  <b>Gracias a todos los proyectos y tecnologías que hacen posible The End Utils:</b><br><br>
+  <a href="https://mctiers.com" title="McTiers API"><img src="https://mctiers.com/favicon.ico" width="40" style="border-radius:8px;"/></a>
+  <a href="https://crafty.gg" title="Crafty.gg"><img src="https://crafty.gg/favicon.ico" width="40" style="border-radius:8px;"/></a>
+  <a href="https://nodejs.org" title="Node.js"><img src="https://nodejs.org/static/images/logo.svg" width="40"/></a>
+  <a href="https://discord.js.org" title="discord.js"><img src="https://raw.githubusercontent.com/discordjs/discord.js/main/.github/icon.svg" width="40"/></a>
+  <a href="https://github.com/" title="GitHub"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="40"/></a>
+</p>
+
+- **McTiers API** ([mctiers.com](https://mctiers.com) y [mctiers.io](https://mctiers.io)) por proveer los datos de tiers de Minecraft.
+- **Crafty.gg** ([crafty.gg](https://crafty.gg)) por el renderizado de skins 3D.
+- **Node.js**, **discord.js** y **GitHub** por ser la base tecnológica del proyecto.
+- Y a todas las APIs, librerías y herramientas open source que han hecho posible este bot. 
