@@ -41,6 +41,8 @@ module.exports = {
         poll: '📊',
         channel: '📢',
         emoji: '😊',
-        users: '👥'
+        users: '👥',
+        fun: '🎉',
+        heart: '💖'
     }
 }; 
