@@ -70,7 +70,14 @@ Un bot diseñado en las entrañas del abismo digital para servir al dominio supr
 ```bash
 ??tier <usuario>    # Tiers abismales (McTiers.com)
 ??tierv2 <usuario>  # Tiers v2 (McTiers.io, Crystal/Elytra)
+??namehistory <usuario>  # (En mantenimiento) Muestra el historial de nombres de un jugador de Minecraft
 ```
+
+- **??namehistory <usuario>**
+  - _Estado: En mantenimiento_
+  - Muestra el historial de nombres de un jugador de Minecraft consultando APIs externas. Actualmente el comando está deshabilitado por problemas con las APIs públicas.
+  - Ejemplo: `??namehistory Notch`
+  - Respuesta actual: `⚠️ El comando está en mantenimiento. Por favor, inténtalo más tarde.`
 </details>
 
 <details>
