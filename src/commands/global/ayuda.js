@@ -40,6 +40,7 @@ module.exports = {
             { name: '😉 Wink', value: `\`${config.prefix}wink @usuario\` o \`${config.prefix}guiñar @usuario\`\nGuiña a un usuario` },
             { name: '🤦 Facepalm', value: `\`${config.prefix}facepalm @usuario\` o \`${config.prefix}palmadacara @usuario\`\nPalmada en la cara (facepalm)` },
             { name: '🐶 Dog', value: `\`${config.prefix}dog\`\nMuestra una foto aleatoria de un perrito` },
+            { name: '🐱 Cat', value: `\`${config.prefix}cat\` o \`${config.prefix}gato\` o \`${config.prefix}gata\`\nMuestra una foto aleatoria de un gatito` },
         ];
         const COMMANDS_PER_PAGE = 6;
         function createGlobalEmbed(page = 0) {
