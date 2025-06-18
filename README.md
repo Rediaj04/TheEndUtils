@@ -1,7 +1,7 @@
 # The End Utils 🤖
 
 <div align="center">
-  <img src="Logo.png" alt="The End Utils Logo" width="200"/>
+  <img src="Logo.gif" alt="The End Utils Logo" width="200"/>
   
   [![Discord](https://img.shields.io/discord/1227460757524975678?color=7289DA&label=Discord&logo=discord&logoColor=white)](https://discord.gg/3pFVWqJfaW)
   [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)

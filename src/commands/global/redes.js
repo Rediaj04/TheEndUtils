@@ -26,7 +26,7 @@ module.exports = {
 
             await message.reply({
                 embeds: [redesEmbed],
-                files: ['./Banner.gif']
+                files: ['./assets/Banner.gif']
             });
         } catch (error) {
             console.error('Error en el comando redes:', error);

@@ -24,7 +24,7 @@ module.exports = {
         try {
             await message.reply({
                 embeds: [ontopEmbed],
-                files: ['./Banner.gif']
+                files: ['./assets/Banner.gif']
             });
         } catch (error) {
             console.error('Error en el comando ontop:', error);
