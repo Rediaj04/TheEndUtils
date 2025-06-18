@@ -21,7 +21,8 @@ module.exports = {
                 case 'main':
                     embed.setTitle(`${emojis.title} The End Utils ${emojis.title}`)
                         .setDescription('Bot de utilidades para The End Community\n\nSelecciona una categoría para ver los comandos disponibles:')
-                        .setThumbnail(client.user.displayAvatarURL());
+                        .setThumbnail(client.user.displayAvatarURL())
+                        .setImage('attachment://Banner.gif');
                     break;
 
                 case 'testing':
@@ -102,7 +103,8 @@ module.exports = {
             // Enviar el mensaje inicial como respuesta
             const helpMessage = await message.reply({
                 embeds: [createHelpEmbed('main')],
-                components: [row]
+                components: [row],
+                files: ['./src/assets/Banner.gif']
             });
 
             // Crear el colector de botones
@@ -119,10 +121,21 @@ module.exports = {
                 }
 
                 const category = interaction.customId.split('_')[1];
-                await interaction.update({
-                    embeds: [createHelpEmbed(category)],
-                    components: [row]
-                });
+                if (category === 'main') {
+                    await interaction.update({
+                        embeds: [createHelpEmbed(category)],
+                        components: [row],
+                        files: ['./src/assets/Banner.gif'],
+                        attachments: []
+                    });
+                } else {
+                    await interaction.update({
+                        embeds: [createHelpEmbed(category)],
+                        components: [row],
+                        files: [],
+                        attachments: []
+                    });
+                }
             });
 
             collector.on('end', () => {
