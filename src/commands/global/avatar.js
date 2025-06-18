@@ -16,7 +16,13 @@ module.exports = {
             .setFooter({ text: 'The End Utils - Tu asistente perfecto 💖' })
             .setTimestamp();
 
-        await message.channel.send({ embeds: [avatarEmbed] });
-        await message.delete().catch(console.error);
+        try {
+            await message.reply({ embeds: [avatarEmbed] });
+        } catch (error) {
+            console.error('Error en el comando avatar:', error);
+            const errorMsg = await message.reply('❌ Hubo un error al mostrar el avatar.');
+            setTimeout(() => errorMsg.delete().catch(console.error), 5000);
+            setTimeout(() => message.delete().catch(console.error), 5000);
+        }
     },
 }; 

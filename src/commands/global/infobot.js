@@ -36,16 +36,15 @@ module.exports = {
                 .setFooter({ text: 'The End Utils - Tu asistente perfecto 💖' })
                 .setTimestamp();
 
-            await message.channel.send({
+            await message.reply({
                 embeds: [infobotEmbed],
                 files: ['./Banner.gif']
             });
-            await message.delete().catch(console.error);
         } catch (error) {
             console.error('Error en el comando infobot:', error);
-            message.reply(errores.ERROR_DESCONOCIDO + ' Por favor, intenta de nuevo más tarde.').then(msg => {
-                setTimeout(() => msg.delete().catch(console.error), 5000);
-            });
+            const errorMsg = await message.reply(errores.ERROR_DESCONOCIDO + ' Por favor, intenta de nuevo más tarde.');
+            setTimeout(() => errorMsg.delete().catch(console.error), errores.TIEMPO_BORRADO_ERROR);
+            setTimeout(() => message.delete().catch(console.error), errores.TIEMPO_BORRADO_ERROR);
         }
     },
 }; 

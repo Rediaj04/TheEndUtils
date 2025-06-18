@@ -25,7 +25,13 @@ module.exports = {
             .setFooter({ text: 'The End Utils - Tu asistente perfecto 💖' })
             .setTimestamp();
 
-        await message.channel.send({ embeds: [userEmbed] });
-        await message.delete().catch(console.error);
+        try {
+            await message.reply({ embeds: [userEmbed] });
+        } catch (error) {
+            console.error('Error en el comando userinfo:', error);
+            const errorMsg = await message.reply('❌ Hubo un error al mostrar la información del usuario.');
+            setTimeout(() => errorMsg.delete().catch(console.error), 5000);
+            setTimeout(() => message.delete().catch(console.error), 5000);
+        }
     },
 }; 

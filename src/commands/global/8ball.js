@@ -11,9 +11,9 @@ module.exports = {
 
         // Verificar si hay pregunta
         if (!args.length) {
-            const errorMsg = await message.channel.send(errores.USO_INCORRECTO(`${config.prefix}8ball ¿Seré rico algún día?`));
-            await message.delete().catch(console.error);
+            const errorMsg = await message.reply(errores.USO_INCORRECTO(`${config.prefix}8ball ¿Seré rico algún día?`));
             setTimeout(() => errorMsg.delete().catch(console.error), errores.TIEMPO_BORRADO_ERROR);
+            setTimeout(() => message.delete().catch(console.error), errores.TIEMPO_BORRADO_ERROR);
             return;
         }
 
@@ -53,12 +53,12 @@ module.exports = {
             .setTimestamp();
 
         try {
-            await message.channel.send({ embeds: [ballEmbed] });
-            await message.delete().catch(console.error);
+            await message.reply({ embeds: [ballEmbed] });
         } catch (error) {
             console.error(error);
-            const errorMsg = await message.channel.send(errores.ERROR_DESCONOCIDO);
+            const errorMsg = await message.reply(errores.ERROR_DESCONOCIDO);
             setTimeout(() => errorMsg.delete().catch(console.error), errores.TIEMPO_BORRADO_ERROR);
+            setTimeout(() => message.delete().catch(console.error), errores.TIEMPO_BORRADO_ERROR);
         }
     },
 }; 

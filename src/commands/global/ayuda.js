@@ -98,39 +98,43 @@ module.exports = {
                     .setStyle(ButtonStyle.Danger)
             );
 
-        // Enviar el mensaje inicial
-        const helpMessage = await message.channel.send({
-            embeds: [createHelpEmbed('main')],
-            components: [row]
-        });
-
-        // Crear el colector de botones
-        const collector = helpMessage.createMessageComponentCollector({
-            time: 300000 // 5 minutos
-        });
-
-        collector.on('collect', async (interaction) => {
-            if (interaction.user.id !== message.author.id) {
-                return interaction.reply({
-                    content: errores.SOLO_AUTOR,
-                    ephemeral: true
-                });
-            }
-
-            const category = interaction.customId.split('_')[1];
-            await interaction.update({
-                embeds: [createHelpEmbed(category)],
+        try {
+            // Enviar el mensaje inicial como respuesta
+            const helpMessage = await message.reply({
+                embeds: [createHelpEmbed('main')],
                 components: [row]
             });
-        });
 
-        collector.on('end', () => {
-            helpMessage.edit({
-                components: []
-            }).catch(console.error);
-        });
+            // Crear el colector de botones
+            const collector = helpMessage.createMessageComponentCollector({
+                time: 300000 // 5 minutos
+            });
 
-        // Eliminar el mensaje original
-        await message.delete().catch(console.error);
+            collector.on('collect', async (interaction) => {
+                if (interaction.user.id !== message.author.id) {
+                    return interaction.reply({
+                        content: errores.SOLO_AUTOR,
+                        ephemeral: true
+                    });
+                }
+
+                const category = interaction.customId.split('_')[1];
+                await interaction.update({
+                    embeds: [createHelpEmbed(category)],
+                    components: [row]
+                });
+            });
+
+            collector.on('end', () => {
+                helpMessage.edit({
+                    components: []
+                }).catch(console.error);
+            });
+        } catch (error) {
+            console.error('Error en el comando ayuda:', error);
+            const errorMsg = await message.reply('❌ Hubo un error al mostrar la ayuda.');
+            setTimeout(() => errorMsg.delete().catch(console.error), 5000);
+            setTimeout(() => message.delete().catch(console.error), 5000);
+        }
     },
 }; 

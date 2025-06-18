@@ -21,10 +21,16 @@ module.exports = {
             .setFooter({ text: 'The End Utils - Tu asistente perfecto 💖' })
             .setTimestamp();
 
-        await message.channel.send({
-            embeds: [ontopEmbed],
-            files: ['./Banner.gif']
-        });
-        await message.delete().catch(console.error);
+        try {
+            await message.reply({
+                embeds: [ontopEmbed],
+                files: ['./Banner.gif']
+            });
+        } catch (error) {
+            console.error('Error en el comando ontop:', error);
+            const errorMsg = await message.reply('❌ Hubo un error al mostrar el poderío de The End.');
+            setTimeout(() => errorMsg.delete().catch(console.error), 5000);
+            setTimeout(() => message.delete().catch(console.error), 5000);
+        }
     },
 }; 

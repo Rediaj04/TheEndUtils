@@ -68,16 +68,13 @@ module.exports = {
             const buffer = canvas.toBuffer('image/png');
 
             // Enviar la imagen editada con la mención del usuario y mensaje divertido
-            await message.channel.send({
+            await message.reply({
                 content: `¡${user} ha sido kunnonizado! 💖 *¡Ahora eres más kawaii que nunca!* ✨`,
                 files: [{
                     attachment: buffer,
                     name: 'kunnonizado.png'
                 }]
             });
-
-            // Eliminar el mensaje original
-            await message.delete().catch(console.error);
         } catch (error) {
             console.error('Error al procesar la imagen:', error);
             const errorMsg = await message.reply(errores.ERROR_PROCESAR_IMAGEN);
