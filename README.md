@@ -57,6 +57,12 @@ Bot de Discord para la gestión de pruebas y administración del servidor The En
 - `??infobot` - Muestra información sobre el bot
 - `??ayuda` - Muestra lista de comandos
 
+### Comandos NSFW
+- `??waifu` - Muestra una imagen de waifu (solo canales NSFW)
+- `??neko` - Muestra una imagen de neko (solo canales NSFW)
+- `??trap` - Muestra una imagen de trap (solo canales NSFW)
+- `??blowjob` - Muestra una imagen de blowjob (solo canales NSFW)
+
 ### Comandos de Administración
 - `??roles` - Gestiona roles permitidos
 - `??clear <cantidad>` - Borra hasta 50 mensajes en el canal actual

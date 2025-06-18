@@ -84,6 +84,17 @@ module.exports = {
                 case 'global':
                     return createGlobalEmbed(page);
 
+                case 'nsfw':
+                    embed.setTitle('🔞 Comandos NSFW')
+                        .setDescription('*Solo disponibles en canales NSFW*')
+                        .addFields(
+                            { name: '🌸 Waifu', value: `\`${config.prefix}waifu\`\nMuestra una imagen de waifu` },
+                            { name: '🐱 Neko', value: `\`${config.prefix}neko\`\nMuestra una imagen de neko` },
+                            { name: '🎭 Trap', value: `\`${config.prefix}trap\`\nMuestra una imagen de trap` },
+                            { name: '💋 Blowjob', value: `\`${config.prefix}blowjob\`\nMuestra una imagen de blowjob` }
+                        );
+                    break;
+
                 case 'admin':
                     embed.setTitle(`${emojis.admin} Comandos de Administración`)
                         .setDescription('*Solo para administradores*')
@@ -97,7 +108,7 @@ module.exports = {
 
                 case 'info':
                     embed.setTitle(`${emojis.info} Información Adicional`)
-                        .setDescription('• Los mensajes originales se eliminan automáticamente\n• El comando AFK notificará al staff después de 10 minutos\n• Usa `??ayuda` para ver esta lista');
+                        .setDescription('• Los mensajes originales se eliminan automáticamente\n• El comando AFK notificará al staff después de 10 minutos\n• Los comandos NSFW solo funcionan en canales NSFW\n• Usa `??ayuda` para ver esta lista');
                     break;
             }
 
@@ -107,7 +118,7 @@ module.exports = {
         // Crear los botones
         function getRow(category, page, maxPage) {
             if (category !== 'global') {
-                return new ActionRowBuilder()
+                const row1 = new ActionRowBuilder()
                     .addComponents(
                         new ButtonBuilder()
                             .setCustomId('help_main')
@@ -120,6 +131,14 @@ module.exports = {
                         new ButtonBuilder()
                             .setCustomId('help_global')
                             .setLabel('Globales')
+                            .setStyle(ButtonStyle.Danger)
+                    );
+                
+                const row2 = new ActionRowBuilder()
+                    .addComponents(
+                        new ButtonBuilder()
+                            .setCustomId('help_nsfw')
+                            .setLabel('NSFW')
                             .setStyle(ButtonStyle.Danger),
                         new ButtonBuilder()
                             .setCustomId('help_admin')
@@ -130,9 +149,11 @@ module.exports = {
                             .setLabel('Info')
                             .setStyle(ButtonStyle.Danger)
                     );
+                
+                return [row1, row2];
             }
             // Solo para global: paginación y volver
-            return new ActionRowBuilder()
+            return [new ActionRowBuilder()
                 .addComponents(
                     new ButtonBuilder()
                         .setCustomId('help_global_prev')
@@ -148,7 +169,7 @@ module.exports = {
                         .setLabel('Siguiente ➡️')
                         .setStyle(ButtonStyle.Secondary)
                         .setDisabled(page === maxPage)
-                );
+                )];
         }
 
         let globalPage = 0;
@@ -158,7 +179,7 @@ module.exports = {
             // Enviar el mensaje inicial como respuesta
             const helpMessage = await message.reply({
                 embeds: [createHelpEmbed('main')],
-                components: [getRow('main', 0, maxGlobalPage)],
+                components: getRow('main', 0, maxGlobalPage),
                 files: ['./src/assets/Banner.gif']
             });
 
@@ -179,7 +200,7 @@ module.exports = {
                     globalPage = Math.min(globalPage + 1, maxGlobalPage);
                     await interaction.update({
                         embeds: [createHelpEmbed('global', globalPage)],
-                        components: [getRow('global', globalPage, maxGlobalPage)],
+                        components: getRow('global', globalPage, maxGlobalPage),
                         files: [],
                         attachments: []
                     });
@@ -189,7 +210,7 @@ module.exports = {
                     globalPage = Math.max(globalPage - 1, 0);
                     await interaction.update({
                         embeds: [createHelpEmbed('global', globalPage)],
-                        components: [getRow('global', globalPage, maxGlobalPage)],
+                        components: getRow('global', globalPage, maxGlobalPage),
                         files: [],
                         attachments: []
                     });
@@ -202,21 +223,21 @@ module.exports = {
                 if (category === 'main') {
                     await interaction.update({
                         embeds: [createHelpEmbed(category)],
-                        components: [getRow(category, globalPage, maxGlobalPage)],
+                        components: getRow(category, globalPage, maxGlobalPage),
                         files: ['./src/assets/Banner.gif'],
                         attachments: []
                     });
                 } else if (category === 'global') {
                     await interaction.update({
                         embeds: [createHelpEmbed('global', globalPage)],
-                        components: [getRow('global', globalPage, maxGlobalPage)],
+                        components: getRow('global', globalPage, maxGlobalPage),
                         files: [],
                         attachments: []
                     });
                 } else {
                     await interaction.update({
                         embeds: [createHelpEmbed(category)],
-                        components: [getRow(category, globalPage, maxGlobalPage)],
+                        components: getRow(category, globalPage, maxGlobalPage),
                         files: [],
                         attachments: []
                     });
