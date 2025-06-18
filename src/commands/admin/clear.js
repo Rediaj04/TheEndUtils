@@ -1,6 +1,7 @@
 const { EmbedBuilder } = require('discord.js');
 const config = require('../../config');
 const styles = require('../../utils/styles');
+const errores = require('../../utils/errores');
 
 module.exports = {
     name: 'clear',
@@ -10,7 +11,7 @@ module.exports = {
 
         // Verificar si el usuario es administrador
         if (!message.member.permissions.has('Administrator')) {
-            const errorMsg = await message.channel.send(`${emojis.error} No tienes permisos para usar este comando.`);
+            const errorMsg = await message.channel.send(errores.SOLO_ADMIN);
             await message.delete().catch(console.error);
             setTimeout(() => errorMsg.delete().catch(console.error), 5000);
             return;
@@ -21,7 +22,7 @@ module.exports = {
 
         // Validar la cantidad
         if (isNaN(amount)) {
-            const errorMsg = await message.channel.send(`${emojis.error} Por favor, especifica una cantidad válida de mensajes a borrar.\nEjemplo: \`${config.prefix}clear 10\``);
+            const errorMsg = await message.channel.send(errores.CANTIDAD_INVALIDA(`$${config.prefix}clear 10`));
             await message.delete().catch(console.error);
             setTimeout(() => errorMsg.delete().catch(console.error), 5000);
             return;
@@ -29,7 +30,7 @@ module.exports = {
 
         // Validar el límite
         if (amount < 1 || amount > 50) {
-            const errorMsg = await message.channel.send(`${emojis.error} La cantidad debe estar entre 1 y 50 mensajes.`);
+            const errorMsg = await message.channel.send(errores.LIMITE_CANTIDAD);
             await message.delete().catch(console.error);
             setTimeout(() => errorMsg.delete().catch(console.error), 5000);
             return;
@@ -45,7 +46,7 @@ module.exports = {
 
         } catch (error) {
             console.error('Error al borrar mensajes:', error);
-            const errorMsg = await message.channel.send(`${emojis.error} No se pudieron borrar los mensajes. Los mensajes deben tener menos de 14 días de antigüedad.`);
+            const errorMsg = await message.channel.send(errores.ERROR_BORRAR_MENSAJES);
             setTimeout(() => errorMsg.delete().catch(console.error), 5000);
         }
     },

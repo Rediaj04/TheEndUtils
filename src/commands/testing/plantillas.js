@@ -1,6 +1,7 @@
 const config = require('../../config');
 const styles = require('../../utils/styles');
 const permissions = require('../../utils/permissions');
+const errores = require('../../utils/errores');
 
 module.exports = {
     name: 'plantillas',
@@ -9,7 +10,7 @@ module.exports = {
     async execute(message, args, client) {
         // Verificar permisos
         if (!permissions.canUseTesting(message.member)) {
-            return message.reply('No tienes permisos para usar este comando.');
+            return message.reply(errores.SOLO_TESTING);
         }
 
         const { emojis } = styles;

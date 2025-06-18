@@ -1,6 +1,7 @@
 const config = require('../../config');
 const styles = require('../../utils/styles');
 const permissions = require('../../utils/permissions');
+const errores = require('../../utils/errores');
 
 module.exports = {
     name: 'nopass',
@@ -8,7 +9,7 @@ module.exports = {
     async execute(message, args) {
         // Verificar permisos
         if (!permissions.canUseTesting(message.member)) {
-            const errorMsg = await message.reply('No tienes permisos para usar este comando.');
+            const errorMsg = await message.reply(errores.SOLO_TESTING);
             setTimeout(() => errorMsg.delete().catch(console.error), 2000);
             setTimeout(() => message.delete().catch(console.error), 2000);
             return;
@@ -16,7 +17,7 @@ module.exports = {
 
         const user = message.mentions.users.first();
         if (!user) {
-            const errorMsg = await message.reply(`Por favor, menciona al usuario que no aprobó las pruebas.\nEjemplo: \`${config.prefix}nopass @usuario\``);
+            const errorMsg = await message.reply(errores.FALTA_USUARIO(`$${config.prefix}nopass @usuario`));
             setTimeout(() => errorMsg.delete().catch(console.error), 2000);
             setTimeout(() => message.delete().catch(console.error), 2000);
             return;

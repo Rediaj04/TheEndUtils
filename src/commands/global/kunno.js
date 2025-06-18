@@ -1,5 +1,6 @@
 const { createCanvas, loadImage } = require('canvas');
 const config = require('../../config');
+const errores = require('../../utils/errores');
 
 module.exports = {
     name: 'kunno',
@@ -8,7 +9,7 @@ module.exports = {
         // Verificar si se mencionó a un usuario
         const user = message.mentions.users.first();
         if (!user) {
-            const errorMsg = await message.reply(`Por favor, menciona a un usuario. Ejemplo: ${config.prefix}kunno @usuario`);
+            const errorMsg = await message.reply(errores.FALTA_USUARIO(`$${config.prefix}kunno @usuario`));
             setTimeout(() => errorMsg.delete().catch(console.error), 2000);
             setTimeout(() => message.delete().catch(console.error), 2000);
             return;
@@ -79,7 +80,7 @@ module.exports = {
             await message.delete().catch(console.error);
         } catch (error) {
             console.error('Error al procesar la imagen:', error);
-            const errorMsg = await message.reply('Hubo un error al procesar la imagen.');
+            const errorMsg = await message.reply(errores.ERROR_PROCESAR_IMAGEN);
             setTimeout(() => errorMsg.delete().catch(console.error), 2000);
             setTimeout(() => message.delete().catch(console.error), 2000);
         }

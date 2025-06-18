@@ -1,6 +1,7 @@
 const { EmbedBuilder } = require('discord.js');
 const config = require('../../config');
 const styles = require('../../utils/styles');
+const errores = require('../../utils/errores');
 
 module.exports = {
     name: '8ball',
@@ -10,7 +11,7 @@ module.exports = {
 
         // Verificar si hay pregunta
         if (!args.length) {
-            const errorMsg = await message.channel.send(`${emojis.error} Por favor, haz una pregunta.\nEjemplo: \`${config.prefix}8ball ¿Seré rico algún día?\``);
+            const errorMsg = await message.channel.send(errores.USO_INCORRECTO(`${config.prefix}8ball ¿Seré rico algún día?`));
             await message.delete().catch(console.error);
             setTimeout(() => errorMsg.delete().catch(console.error), 5000);
             return;
@@ -51,7 +52,13 @@ module.exports = {
             .setFooter({ text: 'The End Utils - Tu asistente perfecto 💖' })
             .setTimestamp();
 
-        await message.channel.send({ embeds: [ballEmbed] });
-        await message.delete().catch(console.error);
+        try {
+            await message.channel.send({ embeds: [ballEmbed] });
+            await message.delete().catch(console.error);
+        } catch (error) {
+            console.error(error);
+            const errorMsg = await message.channel.send(errores.ERROR_DESCONOCIDO);
+            setTimeout(() => errorMsg.delete().catch(console.error), 5000);
+        }
     },
 }; 

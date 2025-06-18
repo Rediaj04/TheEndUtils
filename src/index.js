@@ -3,6 +3,7 @@ const { Client, GatewayIntentBits, Partials, EmbedBuilder } = require('discord.j
 const fs = require('fs');
 const path = require('path');
 const config = require('./config');
+const errores = require('./utils/errores');
 
 const client = new Client({
     intents: [
@@ -53,7 +54,8 @@ client.on('messageCreate', async message => {
     const args = message.content.slice(config.prefix.length).trim().split(/ +/);
     const commandName = args.shift().toLowerCase();
 
-    const command = client.commands.get(commandName) || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
+    const command = client.commands.get(commandName)
+        || Array.from(client.commands.values()).find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
 
     if (!command) return;
 
@@ -61,7 +63,7 @@ client.on('messageCreate', async message => {
         command.execute(message, args, client);
     } catch (error) {
         console.error(error);
-        message.reply('❌ Hubo un error al ejecutar el comando.').then(msg => {
+        message.reply(errores.ERROR_DESCONOCIDO).then(msg => {
             setTimeout(() => msg.delete().catch(console.error), 5000);
         });
     }

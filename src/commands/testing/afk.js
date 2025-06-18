@@ -1,6 +1,7 @@
 const config = require('../../config');
 const styles = require('../../utils/styles');
 const permissions = require('../../utils/permissions');
+const errores = require('../../utils/errores');
 
 module.exports = {
     name: 'afk',
@@ -8,7 +9,7 @@ module.exports = {
     async execute(message, args, client) {
         // Verificar permisos
         if (!permissions.canUseTesting(message.member)) {
-            const errorMsg = await message.reply('No tienes permisos para usar este comando.');
+            const errorMsg = await message.reply(errores.SOLO_TESTING);
             setTimeout(() => errorMsg.delete().catch(console.error), 2000);
             setTimeout(() => message.delete().catch(console.error), 2000);
             return;
@@ -19,7 +20,7 @@ module.exports = {
         // Verificar si se mencionó a un usuario
         const user = message.mentions.users.first();
         if (!user) {
-            const errorMsg = await message.reply(`Por favor, menciona a un usuario. Ejemplo: ${config.prefix}afk @usuario`);
+            const errorMsg = await message.reply(errores.FALTA_USUARIO(`$${config.prefix}afk @usuario`));
             setTimeout(() => errorMsg.delete().catch(console.error), 2000);
             setTimeout(() => message.delete().catch(console.error), 2000);
             return;

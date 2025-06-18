@@ -1,6 +1,7 @@
 const { EmbedBuilder } = require('discord.js');
 const config = require('../../config');
 const styles = require('../../utils/styles');
+const errores = require('../../utils/errores');
 
 module.exports = {
     name: 'redes',
@@ -30,7 +31,7 @@ module.exports = {
             await message.delete().catch(console.error);
         } catch (error) {
             console.error('Error en el comando redes:', error);
-            message.reply('❌ Hubo un error al ejecutar el comando. Por favor, intenta de nuevo más tarde.').then(msg => {
+            message.reply(errores.ERROR_DESCONOCIDO + ' Por favor, intenta de nuevo más tarde.').then(msg => {
                 setTimeout(() => msg.delete().catch(console.error), 5000);
             });
         }

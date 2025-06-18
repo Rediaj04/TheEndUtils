@@ -1,6 +1,7 @@
 const { EmbedBuilder } = require('discord.js');
 const config = require('../../config');
 const styles = require('../../utils/styles');
+const errores = require('../../utils/errores');
 
 module.exports = {
     name: 'kiss',
@@ -10,13 +11,13 @@ module.exports = {
             const user = message.mentions.users.first();
             
             if (!user) {
-                const errorMsg = await message.reply('❌ Debes mencionar a un usuario para besarlo.');
+                const errorMsg = await message.reply(errores.FALTA_USUARIO(`$${config.prefix}kiss @usuario`));
                 setTimeout(() => errorMsg.delete().catch(console.error), 5000);
                 return;
             }
 
             if (user.id === message.author.id) {
-                const errorMsg = await message.reply('❌ No puedes besarte a ti mismo, ¡eso sería muy raro!');
+                const errorMsg = await message.reply(errores.NO_BESARSE);
                 setTimeout(() => errorMsg.delete().catch(console.error), 5000);
                 return;
             }
@@ -33,7 +34,7 @@ module.exports = {
             await message.delete().catch(console.error);
         } catch (error) {
             console.error('Error en el comando kiss:', error);
-            message.reply('❌ Hubo un error al ejecutar el comando. Por favor, intenta de nuevo más tarde.').then(msg => {
+            message.reply(errores.ERROR_DESCONOCIDO + ' Por favor, intenta de nuevo más tarde.').then(msg => {
                 setTimeout(() => msg.delete().catch(console.error), 5000);
             });
         }

@@ -1,6 +1,7 @@
 const config = require('../../config');
 const styles = require('../../utils/styles');
 const permissions = require('../../utils/permissions');
+const errores = require('../../utils/errores');
 
 module.exports = {
     name: 'roles',
@@ -10,7 +11,7 @@ module.exports = {
 
         // Verificar si el usuario es administrador
         if (!permissions.isAdmin(message.member)) {
-            return message.reply('❌ Solo los administradores pueden usar este comando.');
+            return message.reply(errores.SOLO_ADMIN);
         }
 
         // Si no hay argumentos, mostrar la lista de roles
@@ -39,7 +40,7 @@ ${emojis.separator}`;
         const role = message.mentions.roles.first();
 
         if (!role) {
-            return message.reply('❌ Por favor, menciona un rol.');
+            return message.reply(errores.FALTA_ROL(`$${config.prefix}roles add @rol`));
         }
 
         switch (action) {
@@ -52,7 +53,7 @@ ${emojis.separator}`;
                 await message.reply(`✅ Rol ${role} removido de la lista de roles permitidos.`);
                 break;
             default:
-                await message.reply('❌ Acción no válida. Usa `add` o `remove`.');
+                await message.reply(errores.ACCION_INVALIDA);
         }
 
         // Eliminar el mensaje original

@@ -1,6 +1,7 @@
 const { EmbedBuilder } = require('discord.js');
 const config = require('../../config');
 const styles = require('../../utils/styles');
+const errores = require('../../utils/errores');
 
 module.exports = {
     name: 'reglas',
@@ -12,7 +13,7 @@ module.exports = {
 
             // Verificar si el usuario tiene permisos de administrador
             if (!message.member.permissions.has('Administrator')) {
-                const errorMsg = await message.reply('❌ No tienes permiso para usar este comando. Solo los administradores pueden ver las reglas.');
+                const errorMsg = await message.reply(errores.SOLO_ADMIN + ' Solo los administradores pueden ver las reglas.');
                 setTimeout(() => errorMsg.delete().catch(console.error), 5000);
                 return;
             }
@@ -52,7 +53,7 @@ ${emojis.separator}
             await message.delete().catch(console.error);
         } catch (error) {
             console.error('Error en el comando reglas:', error);
-            message.reply('❌ Hubo un error al ejecutar el comando. Por favor, intenta de nuevo más tarde.').then(msg => {
+            message.reply(errores.ERROR_DESCONOCIDO + ' Por favor, intenta de nuevo más tarde.').then(msg => {
                 setTimeout(() => msg.delete().catch(console.error), 5000);
             });
         }

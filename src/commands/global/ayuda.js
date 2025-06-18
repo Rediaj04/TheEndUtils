@@ -1,6 +1,7 @@
 const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
 const config = require('../../config');
 const styles = require('../../utils/styles');
+const errores = require('../../utils/errores');
 
 module.exports = {
     name: 'ayuda',
@@ -111,7 +112,7 @@ module.exports = {
         collector.on('collect', async (interaction) => {
             if (interaction.user.id !== message.author.id) {
                 return interaction.reply({
-                    content: 'Solo el autor del comando puede usar estos botones.',
+                    content: errores.SOLO_AUTOR,
                     ephemeral: true
                 });
             }
