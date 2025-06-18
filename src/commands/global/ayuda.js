@@ -44,13 +44,15 @@ module.exports = {
                         .addFields(
                             { name: `${emojis.fun} Kunno`, value: `\`${config.prefix}kunno @usuario\`\nKunnoniza la imagen de perfil de un usuario` },
                             { name: `${emojis.heart} Kiss`, value: `\`${config.prefix}kiss @usuario\`\nEnvía un beso a un usuario` },
+                            { name: '🕊️ Peru', value: `\`${config.prefix}peru @usuario\`\nPeruaniza la imagen de perfil de un usuario` },
                             { name: `${emojis.image} Avatar`, value: `\`${config.prefix}avatar @usuario\`\nMuestra el avatar de un usuario en alta resolución` },
                             { name: `${emojis.user} User Info`, value: `\`${config.prefix}userinfo @usuario\`\nMuestra información detallada de un usuario` },
                             { name: `${emojis.magic} 8Ball`, value: `\`${config.prefix}8ball <pregunta>\`\nResponde a tus preguntas de forma aleatoria` },
                             { name: `${emojis.title} Ontop`, value: `\`${config.prefix}ontop\`\nMuestra el poderío de The End` },
                             { name: `${emojis.globe} Redes`, value: `\`${config.prefix}redes\` o \`${config.prefix}fan\`\nMuestra las redes sociales` },
                             { name: `${emojis.bot} Info Bot`, value: `\`${config.prefix}infobot\`\nMuestra información sobre el bot` },
-                            { name: `${emojis.help} Ayuda`, value: `\`${config.prefix}ayuda\`\nMuestra esta lista de comandos` }
+                            { name: `${emojis.help} Ayuda`, value: `\`${config.prefix}ayuda\`\nMuestra esta lista de comandos` },
+                            { name: '💀 Venezuela', value: `\`${config.prefix}venezuela @usuario\` o \`${config.prefix}veneco @usuario\`\nVenezolaniza la imagen de perfil de un usuario con efecto esqueleto` }
                         );
                     break;
 

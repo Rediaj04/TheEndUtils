@@ -33,6 +33,8 @@ Bot de Discord para la gestión de pruebas y administración del servidor The En
 
 ### Comandos Globales
 - `??kunno @usuario` - Kunnoniza la imagen de perfil de un usuario
+- `??peru @usuario` - Peruaniza la imagen de perfil de un usuario
+- `??venezuela @usuario` o `??veneco @usuario` - Venezolaniza la imagen de perfil de un usuario con efecto esqueleto
 - `??kiss @usuario` - Envía un beso a un usuario
 - `??avatar @usuario` - Muestra el avatar de un usuario en alta resolución
 - `??userinfo @usuario` - Muestra información detallada de un usuario
