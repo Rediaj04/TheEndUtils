@@ -116,8 +116,9 @@ module.exports = {
                     embed.setTitle('⛏️ Comandos de Minecraft')
                         .setDescription('*Comandos útiles para jugadores de Minecraft en The End Community*')
                         .addFields(
-                            { name: '⛏️ Tier', value: `\`${config.prefix}tier <usuario_minecraft>\`\nMuestra las tiers de un jugador de Minecraft usando la API de McTiers y la skin 3D estilo busto.` },
-                            { name: '⛏️ Tier v2', value: `\`${config.prefix}tierv2 <usuario_minecraft>\`\nMuestra las tiers v2 de un jugador de Minecraft usando la API de McTiers.io (Crystal, Elytra, etc).` }
+                            { name: '⛏️ Tier', value: `\`${config.prefix}tier <usuario_minecraft>\`\nMuestra las tiers de un jugador de Minecraft usando la API de McTiers.` },
+                            { name: '⛏️ Tier v2', value: `\`${config.prefix}tierv2 <usuario_minecraft>\`\nMuestra las tiers v2 de un jugador de Minecraft usando la API de McTiers.io (Crystal, Elytra, etc).` },
+                            { name: '🧠 NameHistory', value: `\`${config.prefix}namehistory <usuario>\`\nMuestra el historial de nombres de un jugador de Minecraft usando la API de Crafty.gg.` }
                         );
                     break;
             }

@@ -23,9 +23,9 @@ module.exports = {
 
         try {
             await message.reply({
-                embeds: [ontopEmbed],
+            embeds: [ontopEmbed],
                 files: ['./src/assets/Banner.gif']
-            });
+        });
         } catch (error) {
             console.error('Error en el comando ontop:', error);
             const errorMsg = await message.reply('❌ Hubo un error al mostrar el poderío de The End.');
