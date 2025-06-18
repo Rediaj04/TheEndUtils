@@ -2,10 +2,12 @@ const { EmbedBuilder } = require('discord.js');
 const config = require('../../config');
 const styles = require('../../utils/styles');
 const errores = require('../../utils/errores');
+const fetch = require('node-fetch');
 
 module.exports = {
     name: 'kiss',
     description: 'Envía un beso a un usuario',
+    aliases: ['besar'],
     async execute(message, args, client) {
         try {
             const user = message.mentions.users.first();
@@ -24,12 +26,26 @@ module.exports = {
                 return;
             }
 
+            // Obtener gif aleatorio de nekos.best
+            let gifUrl = 'https://media.tenor.com/gUiu1zyxfzYAAAAi/bear-kiss-bear-kisses.gif';
+            let animeName = 'Desconocido';
+            try {
+                const response = await fetch('https://nekos.best/api/v2/kiss');
+                const data = await response.json();
+                if (data.results && data.results[0]) {
+                    gifUrl = data.results[0].url;
+                    animeName = data.results[0].anime_name || 'Desconocido';
+                }
+            } catch (err) {
+                // Si falla la API, usa el gif por defecto
+            }
+
             const kissEmbed = new EmbedBuilder()
                 .setColor('#FF69B4')
                 .setTitle('💖 ¡Un beso especial! 💖')
                 .setDescription(`**${message.author.username}** le dio un beso a **${user.username}** 💖`)
-                .setImage('https://media.tenor.com/gUiu1zyxfzYAAAAi/bear-kiss-bear-kisses.gif')
-                .setFooter({ text: 'The End Utils - Tu asistente perfecto 💖' })
+                .setImage(gifUrl)
+                .setFooter({ text: `Anime: ${animeName}` })
                 .setTimestamp();
 
             await message.reply({ embeds: [kissEmbed] });
