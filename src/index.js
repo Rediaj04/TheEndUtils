@@ -30,6 +30,10 @@ for (const folder of commandFolders) {
 // Evento cuando el bot está listo
 client.once('ready', () => {
     console.log(`Bot iniciado como ${client.user.tag}`);
+    client.user.setPresence({
+        activities: [{ name: '🎵 TikTok: Jaid3r04', type: 3 }], // 3 = Watching
+        status: 'online'
+    });
 });
 
 // Evento para cuando se menciona al bot
