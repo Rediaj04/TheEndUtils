@@ -4,6 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const config = require('./config');
 const errores = require('./utils/errores');
+const { logCommand } = require('./utils/logger');
 
 const client = new Client({
     intents: [
@@ -64,7 +65,8 @@ client.on('messageCreate', async message => {
     if (!command) return;
 
     try {
-        command.execute(message, args, client);
+        await logCommand({ client, message, commandName, args });
+        await command.execute(message, args, client);
     } catch (error) {
         console.error(error);
         message.reply(errores.ERROR_DESCONOCIDO).then(msg => {
