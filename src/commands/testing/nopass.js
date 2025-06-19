@@ -18,7 +18,7 @@ module.exports = {
         }
 
         // Espera: args = [nick, discord, modo, resultado, tester]
-        // Ejemplo uso: ??nopass .ItzMatiaspvp @matiii0006_67852 Box_Pvp 5-1 @johan16.167
+        // Ejemplo uso: ??nopass .ItzMatiaspvp @matiii0006_67852 Box_Pvp 5- @johan16.167
         if (args.length < 5) {
             const errorMsg = await message.reply('❌ Uso incorrecto. Ejemplo: `??nopass <Nick> <@Discord> <Modo> <Resultado> <@Tester>`');
             setTimeout(() => errorMsg.delete().catch(console.error), errores.TIEMPO_BORRADO_ERROR);
@@ -63,12 +63,12 @@ module.exports = {
                 iconURL: avatarUrl || undefined
             })
             .setDescription(
-                `**Nick:**\n${nick}\n\n` +
-                `**Discord:**\n${discord}\n\n` +
-                `**Modo de juego:**\n${modo}\n\n` +
-                `**Resultado:**\n${resultado}\n\n` +
+                `**Nick:**\n${nick}\n` +
+                `**Discord:**\n${discord}\n` +
+                `**Modo de juego:**\n${modo}\n` +
+                `**Resultado:**\n${resultado}\n` +
                 `**Tester:**\n${tester}`
-            )
+            )            
             .setFooter({ text: 'The End Utils - Sistema de Pruebas', iconURL: message.guild.iconURL() })
             .setTimestamp();
         if (skinUrl) {

@@ -63,12 +63,12 @@ module.exports = {
                 iconURL: avatarUrl || undefined
             })
             .setDescription(
-                `**Nick:**\n${nick}\n\n` +
-                `**Discord:**\n${discord}\n\n` +
-                `**Modo de juego:**\n${modo}\n\n` +
-                `**Resultado:**\n${resultado}\n\n` +
+                `**Nick:**\n${nick}\n` +
+                `**Discord:**\n${discord}\n` +
+                `**Modo de juego:**\n${modo}\n` +
+                `**Resultado:**\n${resultado}\n` +
                 `**Tester:**\n${tester}`
-            )
+            )            
             .setFooter({ text: 'The End Utils - Sistema de Pruebas', iconURL: message.guild.iconURL() })
             .setTimestamp();
         if (skinUrl) {
