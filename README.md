@@ -11,16 +11,21 @@
 </p>
 
 <p align="center">
+  <img src="https://komarev.com/ghpvc/?username=Rediaj04&style=flat-square&color=red" alt="Profile views" />
   <img src="https://img.shields.io/discord/1227460757524975678?color=7289DA&label=Discord&logo=discord&logoColor=white"/>
   <img src="https://img.shields.io/badge/License-MIT-yellow.svg"/>
   <img src="https://img.shields.io/badge/Node.js-v18-green.svg"/>
+  <img src="https://img.shields.io/github/package-json/v/Rediaj04/TheEndUtils?color=blue&label=Versi%C3%B3n" />
+  <img src="https://img.shields.io/github/last-commit/Rediaj04/TheEndUtils?color=red" />
+  <img src="https://img.shields.io/github/issues/Rediaj04/TheEndUtils?color=orange" />
+  <img src="https://img.shields.io/npm/v/discord.js?color=blue&label=discord.js" />
 </p>
 
 ---
 
 ## 🕯️ Descripción Oscura
 
-Un bot diseñado en las entrañas del abismo digital para servir al dominio supremo de The End. Automatiza pruebas, castiga almas perdidas y mantiene el orden en tu imperio infernal.
+> Un bot diseñado en las entrañas del abismo digital para servir al dominio supremo de The End. Automatiza pruebas, castiga almas perdidas y mantiene el orden en tu imperio infernal.
 
 ---
 
@@ -41,12 +46,12 @@ Un bot diseñado en las entrañas del abismo digital para servir al dominio supr
 <summary>🎭 Testing</summary>
 
 ```bash
-??plantillas        # Formulario de solicitud
-??test @usuario     # Terminar prueba
-??pass <Nick> <@Discord> <Modo> <Resultado> <@Tester>   # Aprueba a un usuario, genera embed con skin y reacciones
-??nopass <Nick> <@Discord> <Modo> <Resultado> <@Tester> # No aprueba a un usuario, genera embed con skin y reacciones
-??afk @usuario      # Marca como alma errante
-??reglas            # Leyes del ingreso
+??plantillas
+??test @usuario
+??pass <Nick> <@Discord> <Modo> <Resultado> <@Tester>
+??nopass <Nick> <@Discord> <Modo> <Resultado> <@Tester>
+??afk @usuario
+??reglas
 ```
 </details>
 
@@ -54,17 +59,17 @@ Un bot diseñado en las entrañas del abismo digital para servir al dominio supr
 <summary>💀 Globales</summary>
 
 ```bash
-??kunno @usuario       # Kunnificación
-??peru @usuario        # Efecto Perú
-??veneco @usuario      # Efecto Venezuela esquelético
-??kiss/hug/slap...     # Interacciones oscuras
-??8ball                # Oráculo infernal
-??ontop                # Dominio de The End
-??infobot              # Datos secretos del bot
-??colombiano @usuario   # Efecto Colombia (alias: ??colombia)
-??dog                  # Perrito aleatorio y tierno
-??cat / ??gato / ??gata   # Gatito aleatorio y adorable
-??random-user / ??userrandom / ??randomuser   # Usuario aleatorio con info completa
+??kunno @usuario
+??peru @usuario
+??veneco @usuario
+??kiss/hug/slap...
+??8ball
+??ontop
+??infobot
+??colombiano @usuario
+??dog
+??cat / ??gato / ??gata
+??random-user / ??userrandom / ??randomuser
 ```
 </details>
 
@@ -72,16 +77,10 @@ Un bot diseñado en las entrañas del abismo digital para servir al dominio supr
 <summary>⛏️ Minecraft</summary>
 
 ```bash
-??tier <usuario>    # Tiers abismales (McTiers.com)
-??tierv2 <usuario>  # Tiers v2 (McTiers.io, Crystal/Elytra)
-??namehistory <usuario>  # (En mantenimiento) Muestra el historial de nombres de un jugador de Minecraft
+??tier <usuario>
+??tierv2 <usuario>
+??namehistory <usuario>
 ```
-
-- **??namehistory <usuario>**
-  - _Estado: En mantenimiento_
-  - Muestra el historial de nombres de un jugador de Minecraft consultando APIs externas. Actualmente el comando está deshabilitado por problemas con las APIs públicas.
-  - Ejemplo: `??namehistory Notch`
-  - Respuesta actual: `⚠️ El comando está en mantenimiento. Por favor, inténtalo más tarde.`
 </details>
 
 <details>
@@ -89,7 +88,6 @@ Un bot diseñado en las entrañas del abismo digital para servir al dominio supr
 
 ```bash
 ??waifu / ??neko / ??trap / ??blowjob
-(solo para los canales malditos)
 ```
 </details>
 
@@ -97,20 +95,17 @@ Un bot diseñado en las entrañas del abismo digital para servir al dominio supr
 <summary>🧠 Administración</summary>
 
 ```bash
-??roles           # Gestión del poder
-??clear <número>  # Exorcismo de mensajes
+??roles
+??clear <número>
+??koth
 ```
 </details>
 
 ---
 
 ## 🧾 Logs del Más Allá
-Cada acción queda grabada en piedra infernal (<#1384905115617591380>), con:
 
-- 🧍 Usuario (ID)
-- 🔮 Comando invocado
-- 🕳️ Canal e ID
-- ⏳ Fecha infernal
+Cada acción queda grabada en piedra infernal (<#1384905115617591380>).
 
 ---
 
@@ -122,12 +117,12 @@ cd TheEndUtils
 npm install
 ```
 
-Crea tu grimorio `.env`:
+Configura el `.env`:
 ```env
 DISCORD_TOKEN=tu_token_aqui
 ```
 
-Y ejecuta el conjuro:
+Ejecuta el conjuro:
 ```bash
 npm run dev
 ```
@@ -135,6 +130,7 @@ npm run dev
 ---
 
 ## 🐉 Requisitos del Grimorio
+
 - Node.js v18+
 - Discord Token
 - Almas frescas y código limpio
@@ -143,14 +139,10 @@ npm run dev
 
 ## 🧩 Estructura
 
-```pgsql
+```bash
 TheEndUtils/
 ├── src/
 │   ├── commands/
-│   │   ├── admin/
-│   │   ├── global/
-│   │   ├── testing/
-│   │   └── minecraft/
 │   ├── utils/
 │   └── index.js
 ├── .env
@@ -163,38 +155,33 @@ TheEndUtils/
 ## 🩷 Contribución de los Discípulos
 
 ```bash
-# Haz fork y comienza tu hechizo
 git checkout -b feature/MaldicionNueva
 git commit -m "Invoca: Maldición Nueva"
 git push origin feature/MaldicionNueva
-# Abre un portal (Pull Request)
 ```
 
 ---
 
 ## 📜 Licencia
-Bajo el contrato infernal de la MIT. Consulta LICENSE.
+
+Bajo contrato infernal MIT.
 
 ---
 
-## 🕯️ Créditos del Culto
-<p align="center"> <img src="src/assets/Banner.gif" alt="Banner" width="400"/><br/><br/> <img src="https://github.com/Rediaj04.png" width="100" style="border-radius: 50%" /> </p>
+## 🙏 Créditos y Agradecimientos
+
+<p align="center">
+  <img src="src/assets/Banner.gif" alt="Banner" width="400"/><br/><br/>
+  <img src="https://github.com/Rediaj04.png" width="100" style="border-radius: 50%" />
+</p>
 <p align="center"> Hecho con sangre y JavaScript por <a href="https://github.com/Rediaj04">Rediaj04</a> </p>
-
----
-
-## 🙏 Agradecimientos y Créditos
 
 <p align="center">
   <b>Gracias a todos los proyectos y tecnologías que hacen posible The End Utils:</b><br><br>
   <a href="https://mctiers.com" title="McTiers API"><img src="https://mctiers.com/favicon.ico" width="40" style="border-radius:8px;"/></a>
   <a href="https://crafty.gg" title="Crafty.gg"><img src="https://crafty.gg/favicon.ico" width="40" style="border-radius:8px;"/></a>
   <a href="https://nodejs.org" title="Node.js"><img src="https://nodejs.org/static/images/logo.svg" width="40"/></a>
+  <a href="https://discord.com" title="Discord"><img src="https://cdn.jsdelivr.net/gh/edent/SuperTinyIcons/images/svg/discord.svg" width="40"/></a>
   <a href="https://discord.js.org" title="discord.js"><img src="https://raw.githubusercontent.com/discordjs/discord.js/main/.github/icon.svg" width="40"/></a>
   <a href="https://github.com/" title="GitHub"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="40"/></a>
 </p>
-
-- **McTiers API** ([mctiers.com](https://mctiers.com) y [mctiers.io](https://mctiers.io)) por proveer los datos de tiers de Minecraft.
-- **Crafty.gg** ([crafty.gg](https://crafty.gg)) por el renderizado de skins 3D.
-- **Node.js**, **discord.js** y **GitHub** por ser la base tecnológica del proyecto.
-- Y a todas las APIs, librerías y herramientas open source que han hecho posible este bot. 

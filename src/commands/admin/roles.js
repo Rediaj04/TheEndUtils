@@ -32,7 +32,7 @@ Uso:
 \`${config.prefix}roles remove @rol\` - Remover rol
 ${emojis.separator}`;
 
-            return message.channel.send(rolesMessage);
+            return message.reply({ content: rolesMessage, allowedMentions: { repliedUser: true } });
         }
 
         // Procesar el comando
@@ -46,11 +46,13 @@ ${emojis.separator}`;
         switch (action) {
             case 'add':
                 permissions.addTestingRole(message.guild.id, role.id);
-                await message.reply(`✅ Rol ${role} agregado a la lista de roles permitidos.`);
+                const addMsg = await message.reply({ content: `✅ Rol ${role} agregado a la lista de roles permitidos.`, allowedMentions: { repliedUser: true } });
+                setTimeout(() => addMsg.delete().catch(() => {}), 2000);
                 break;
             case 'remove':
                 permissions.removeTestingRole(message.guild.id, role.id);
-                await message.reply(`✅ Rol ${role} removido de la lista de roles permitidos.`);
+                const remMsg = await message.reply({ content: `✅ Rol ${role} removido de la lista de roles permitidos.`, allowedMentions: { repliedUser: true } });
+                setTimeout(() => remMsg.delete().catch(() => {}), 2000);
                 break;
             default:
                 await message.reply(errores.ACCION_INVALIDA);
