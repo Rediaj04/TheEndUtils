@@ -34,17 +34,19 @@ function getKothFields() {
     const now = new Date();
     const today = new Date(now);
     const fields = [];
-    for (const hora of KOTH_HORAS) {
+    const banderaEsp = ':flag_es:';
+    const kothEmojis = ['🕙', '🕛', '🕑', '🕓', '🕕'];
+    for (let i = 0; i < KOTH_HORAS.length; i++) {
+        const hora = KOTH_HORAS[i];
         let kothDate = new Date(today);
         kothDate.setHours(hora, 0, 0, 0);
         // Si la hora ya pasó hoy, mostrar para mañana
         if (kothDate < now) kothDate.setDate(kothDate.getDate() + 1);
         const timestamp = Math.floor(kothDate.getTime() / 1000);
-        // Si falta más de 0 minutos, mostrar el tiempo relativo
         if (kothDate > now) {
             fields.push({
-                name: `KOTH a las ${hora.toString().padStart(2, '0')}:00 (hora España)`,
-                value: `<t:${timestamp}:R>`,
+                name: `${kothEmojis[i % kothEmojis.length]} KOTH a las ${hora.toString().padStart(2, '0')}:00 ${banderaEsp} (hora España)`,
+                value: `⏰ <t:${timestamp}:R>`,
                 inline: false
             });
         }
@@ -57,8 +59,8 @@ function crearKothEmbed(client) {
     const fields = getKothFields();
     return new EmbedBuilder()
         .setColor('#FF0000')
-        .setTitle('🕒 Horarios de KOTH - WorldBox Spook')
-        .setDescription('¡Consulta aquí los próximos horarios de KOTH!\n\nLos horarios se adaptan a tu zona horaria automáticamente.')
+        .setTitle('🏰 Horarios de KOTH - WorldBox Spook')
+        .setDescription('**¡Consulta aquí los próximos horarios de KOTH!**\n\nLos horarios se adaptan a tu zona horaria automáticamente.\n\n Todos los horarios son en hora de España (Madrid)')
         .setThumbnail('attachment://Logo.gif')
         .setImage('attachment://koth.gif')
         .addFields(fields)
@@ -107,11 +109,7 @@ module.exports = {
         if (!permissions.isAdmin(message.member)) {
             return message.reply('❌ Solo administradores pueden usar este comando.');
         }
-        // Solo en el canal correcto
-        if (message.channel.id !== KOTH_CHANNEL_ID) {
-            return message.reply(`❌ Este comando solo puede usarse en <#${KOTH_CHANNEL_ID}>.`);
-        }
-        // Si ya existe mensaje, edítalo
+        // Si ya existe mensaje, edítalo en el canal KOTH
         let data = leerMensajeKoth();
         let sentMsg;
         const embed = crearKothEmbed(client);
@@ -119,6 +117,7 @@ module.exports = {
             new AttachmentBuilder(path.join(__dirname, '../../assets/Logo.gif'), { name: 'Logo.gif' }),
             new AttachmentBuilder(path.join(__dirname, '../../assets/koth.gif'), { name: 'koth.gif' })
         ];
+        const kothChannel = await client.channels.fetch(KOTH_CHANNEL_ID);
         if (data) {
             try {
                 const canal = await client.channels.fetch(data.channelId);
@@ -127,10 +126,10 @@ module.exports = {
                 sentMsg = mensaje;
             } catch (e) {
                 // Si el mensaje fue borrado, envía uno nuevo
-                sentMsg = await message.channel.send({ embeds: [embed], files });
+                sentMsg = await kothChannel.send({ embeds: [embed], files });
             }
         } else {
-            sentMsg = await message.channel.send({ embeds: [embed], files });
+            sentMsg = await kothChannel.send({ embeds: [embed], files });
         }
         // Guarda el mensaje
         guardarMensajeKoth({ channelId: sentMsg.channel.id, messageId: sentMsg.id });
@@ -139,6 +138,14 @@ module.exports = {
             client.kothUpdater = true;
             setTimeout(() => actualizarKothEmbed(client), getNextUpdateTimestamp());
         }
-        await message.reply('✅ Embed de KOTH enviado/actualizado correctamente.');
+        const infoMsg = await message.reply('✅ Embed de KOTH enviado/actualizado correctamente.');
+        await message.delete().catch((err) => {
+            console.error('Error al borrar el mensaje original del comando KOTH:', err);
+        });
+        setTimeout(() => {
+            infoMsg.delete().catch((err) => {
+                console.error('Error al borrar el mensaje informativo de KOTH:', err);
+            });
+        }, 5000);
     }
 }; 
