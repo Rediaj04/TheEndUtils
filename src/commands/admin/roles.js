@@ -16,7 +16,7 @@ module.exports = {
 
         // Si no hay argumentos, mostrar la lista de roles
         if (args.length === 0) {
-            const roles = permissions.getTestingRoles();
+            const roles = permissions.getTestingRoles(message.guild.id);
             const rolesList = roles.length > 0 
                 ? roles.map(id => `<@&${id}>`).join('\n')
                 : 'No hay roles configurados';
@@ -45,11 +45,11 @@ ${emojis.separator}`;
 
         switch (action) {
             case 'add':
-                permissions.addTestingRole(role.id);
+                permissions.addTestingRole(message.guild.id, role.id);
                 await message.reply(`✅ Rol ${role} agregado a la lista de roles permitidos.`);
                 break;
             case 'remove':
-                permissions.removeTestingRole(role.id);
+                permissions.removeTestingRole(message.guild.id, role.id);
                 await message.reply(`✅ Rol ${role} removido de la lista de roles permitidos.`);
                 break;
             default:
