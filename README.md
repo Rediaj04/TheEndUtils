@@ -43,8 +43,8 @@ Un bot diseñado en las entrañas del abismo digital para servir al dominio supr
 ```bash
 ??plantillas        # Formulario de solicitud
 ??test @usuario     # Terminar prueba
-??pass @usuario     # Aprobación demoníaca
-??nopass @usuario   # Condena al olvido
+??pass <Nick> <@Discord> <Modo> <Resultado> <@Tester>   # Aprueba a un usuario, genera embed con skin y reacciones
+??nopass <Nick> <@Discord> <Modo> <Resultado> <@Tester> # No aprueba a un usuario, genera embed con skin y reacciones
 ??afk @usuario      # Marca como alma errante
 ??reglas            # Leyes del ingreso
 ```

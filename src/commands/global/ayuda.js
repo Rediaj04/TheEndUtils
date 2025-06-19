@@ -79,8 +79,8 @@ module.exports = {
                         .addFields(
                             { name: `${emojis.form} Plantillas`, value: `\`${config.prefix}plantillas\`\nMuestra el formulario de solicitud para el clan` },
                             { name: `${emojis.test} Test`, value: `\`${config.prefix}test @usuario\`\nMuestra el mensaje de finalización del test` },
-                            { name: `${emojis.success} Pass`, value: `\`${config.prefix}pass @usuario\`\nNotifica que el jugador ha aprobado` },
-                            { name: `${emojis.error} No Pass`, value: `\`${config.prefix}nopass @usuario\`\nNotifica que el jugador no ha aprobado` },
+                            { name: `${emojis.success} Pass`, value: `\`${config.prefix}pass <Nick> <@Discord> <Modo> <Resultado> <@Tester>\`\nAprueba a un usuario, genera embed con skin y reacciones` },
+                            { name: `${emojis.error} No Pass`, value: `\`${config.prefix}nopass <Nick> <@Discord> <Modo> <Resultado> <@Tester>\`\nNo aprueba a un usuario, genera embed con skin y reacciones` },
                             { name: `${emojis.time} AFK`, value: `\`${config.prefix}afk @usuario\`\nMarca a un usuario como AFK y notifica al staff después de 10 minutos` },
                             { name: `${emojis.rules} Reglas`, value: `\`${config.prefix}reglas\`\nMuestra las reglas del test de ingreso` }
                         );
