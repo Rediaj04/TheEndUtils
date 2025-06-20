@@ -45,6 +45,8 @@
 <details>
 <summary>🎭 Testing</summary>
 
+_Comandos para pruebas y gestión de ingreso al clan._
+
 ```bash
 ??plantillas
 ??test @usuario
@@ -58,18 +60,57 @@
 <details>
 <summary>💀 Globales</summary>
 
+_Comandos generales de interacción y diversión para todos los usuarios._
+
 ```bash
 ??kunno @usuario
 ??peru @usuario
 ??veneco @usuario
-??kiss/hug/slap...
-??8ball
-??ontop
-??infobot
+??kiss
+??hug
+??slap
+??pat
+??baka
+??punch
+??blush
+??cry
+??laugh
+??poke
+??cuddle
+??wave
+??wink
+??facepalm
 ??colombiano @usuario
 ??dog
 ??cat / ??gato / ??gata
 ??random-user / ??userrandom / ??randomuser
+??venezuela @usuario / ??veneco @usuario
+??8ball
+??cm / ??memide
+```
+</details>
+
+<details>
+<summary>🛠️ Utilidades</summary>
+
+_Comandos útiles para todos los usuarios del servidor._
+
+```bash
+??avatar @usuario
+??userinfo @usuario
+??ayuda
+??redes / ??fan
+```
+</details>
+
+<details>
+<summary>ℹ️ Info</summary>
+
+_Comandos informativos sobre el bot y la comunidad._
+
+```bash
+??ontop
+??infobot
 ```
 </details>
 
@@ -86,8 +127,13 @@
 <details>
 <summary>🔞 NSFW</summary>
 
+_Comandos solo disponibles en canales NSFW._
+
 ```bash
-??waifu / ??neko / ??trap / ??blowjob
+??waifu
+??neko
+??trap
+??blowjob
 ```
 </details>
 
