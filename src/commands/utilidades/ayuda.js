@@ -116,7 +116,18 @@ module.exports = {
                             { name: '🌸 Waifu', value: `\`${config.prefix}waifu\`\nMuestra una imagen de waifu` },
                             { name: '🐱 Neko', value: `\`${config.prefix}neko\`\nMuestra una imagen de neko` },
                             { name: '🎭 Trap', value: `\`${config.prefix}trap\`\nMuestra una imagen de trap` },
-                            { name: '💋 Blowjob', value: `\`${config.prefix}blowjob\`\nMuestra una imagen de blowjob` }
+                            { name: '💋 Blowjob', value: `\`${config.prefix}blowjob\`\nMuestra una imagen de blowjob` },
+                            { name: '🍑 Anal', value: `\`${config.prefix}anal\`\nMuestra un gif NSFW de sexo anal` },
+                            { name: '💦 Cum', value: `\`${config.prefix}cum\`\nMuestra un gif NSFW de corrida` },
+                            { name: '🔥 Fuck', value: `\`${config.prefix}fuck\`\nMuestra un gif NSFW de sexo` },
+                            { name: '👅 Pussylick', value: `\`${config.prefix}pussylick\`\nMuestra un gif NSFW de lamida` },
+                            { name: '😏 Solo', value: `\`${config.prefix}solo\`\nMuestra un gif NSFW de chica sola` },
+                            { name: '🍆 Solo Male', value: `\`${config.prefix}solo_male\`\nMuestra un gif NSFW de chico solo` },
+                            { name: '👩‍❤️‍👩‍❤️‍👩 Threesome FFF', value: `\`${config.prefix}threesome_fff\`\nMuestra un gif NSFW de trío FFF` },
+                            { name: '🔥 Threesome FFM', value: `\`${config.prefix}threesome_ffm\`\nMuestra un gif NSFW de trío FFM` },
+                            { name: '💪🍆 Threesome MMF', value: `\`${config.prefix}threesome_mmf\`\nMuestra un gif NSFW de trío MMF` },
+                            { name: '💙 Yaoi', value: `\`${config.prefix}yaoi\`\nMuestra un gif NSFW de yaoi` },
+                            { name: '💕 Yuri', value: `\`${config.prefix}yuri\`\nMuestra un gif NSFW de yuri` }
                         );
                     break;
 
