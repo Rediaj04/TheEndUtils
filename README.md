@@ -141,6 +141,7 @@ _Comandos para la gestión y moderación del servidor. Solo para administradores
 - `??clear <cantidad>` — Borra hasta 50 mensajes en el canal actual.
 - `??koth` — Envía o actualiza el embed de horarios de KOTH en el canal correspondiente.
 - `??spam "frase" cantidad` — Envía una frase varias veces en el canal. Solo para admins. (máx 50 mensajes, máx 120 caracteres de frase)
+- `??ping` — Muestra la latencia del bot y de la API de Discord.
 
 ---
 
