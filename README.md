@@ -144,6 +144,9 @@ _Comandos para la gestión y moderación del servidor. Solo para administradores
 - `??koth` — Envía o actualiza el embed de horarios de KOTH en el canal correspondiente.
 - `??spam "frase" cantidad` — Envía una frase varias veces en el canal. Solo para admins. (máx 50 mensajes, máx 120 caracteres de frase)
 - `??ping` — Muestra la latencia del bot y de la API de Discord.
+- `??invites` — Lista y resume todas las invitaciones activas del servidor (paginado, con banner).
+- `??invitesuser @usuario` — Muestra todas las invitaciones activas creadas por un usuario (paginado, con banner).
+- `??inviteinfo <código>` — Muestra información detallada de una invitación específica (con banner).
 
 ---
 

@@ -158,7 +158,10 @@ module.exports = {
                             { name: `${emojis.error} Clear`, value: `\`${config.prefix}clear <cantidad>\`\nBorra hasta 50 mensajes en el canal actual` },
                             { name: '🏰 KOTH', value: `\`${config.prefix}koth\`\nEnvía o actualiza el embed de horarios de KOTH en el canal correspondiente` },
                             { name: `${emojis.error} Spam`, value: `\`${config.prefix}spam \"frase\" cantidad\`\nEnvía una frase varias veces en el canal. Solo para admins. (máx 50 mensajes, máx 120 caracteres de frase)` },
-                            { name: '🏓 Ping', value: `\`${config.prefix}ping\`\nMuestra la latencia del bot y de la API de Discord.` }
+                            { name: '🏓 Ping', value: `\`${config.prefix}ping\`\nMuestra la latencia del bot y de la API de Discord.` },
+                            { name: '🔗 Invites', value: `\`${config.prefix}invites\`\nLista y resume todas las invitaciones activas del servidor (paginado, con banner).` },
+                            { name: '👤 InvitesUser', value: `\`${config.prefix}invitesuser @usuario\`\nMuestra todas las invitaciones activas creadas por un usuario (paginado, con banner).` },
+                            { name: 'ℹ️ InviteInfo', value: `\`${config.prefix}inviteinfo <código>\`\nMuestra información detallada de una invitación específica (con banner).` }
                         );
                     break;
 
