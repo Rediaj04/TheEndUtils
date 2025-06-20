@@ -43,6 +43,7 @@ module.exports = {
         emoji: '😊',
         users: '👥',
         fun: '🎉',
+        bot: '🤖',
         heart: '💖'
     }
 }; 

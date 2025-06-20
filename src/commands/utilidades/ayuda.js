@@ -11,6 +11,30 @@ module.exports = {
         const { emojis } = styles;
         const user = message.mentions.users.first() || message.author;
 
+        // --- COMANDOS DE UTILIDADES ---
+        const utilidadesCommands = [
+            { name: `${emojis.image} Avatar`, value: `\`${config.prefix}avatar @usuario\`\nMuestra el avatar de un usuario en alta resolución` },
+            { name: `${emojis.user} User Info`, value: `\`${config.prefix}userinfo @usuario\`\nMuestra información detallada de un usuario` },
+            { name: `${emojis.help} Ayuda`, value: `\`${config.prefix}ayuda\`\nMuestra esta lista de comandos` },
+            { name: `${emojis.globe} Redes`, value: `\`${config.prefix}redes\` o \`${config.prefix}fan\`\nMuestra las redes sociales` },
+            { name: `${emojis.title} Ontop`, value: `\`${config.prefix}ontop\`\nMuestra el poderío de The End` },
+            { name: `${emojis.bot} Info Bot`, value: `\`${config.prefix}infobot\`\nMuestra información sobre el bot` },
+        ];
+        const UTILIDADES_PER_PAGE = 6;
+        function createUtilidadesEmbed(page = 0) {
+            const embed = new EmbedBuilder()
+                .setColor('#FF0000')
+                .setTitle(`${emojis.tools || '🛠️'} Comandos de Utilidades`)
+                .setDescription('*Comandos útiles para todos los usuarios*')
+                .setFooter({ text: `Página ${page + 1} de ${Math.ceil(utilidadesCommands.length / UTILIDADES_PER_PAGE)} • The End Utils - Tu asistente perfecto 💖` })
+                .setTimestamp();
+            const start = page * UTILIDADES_PER_PAGE;
+            const end = start + UTILIDADES_PER_PAGE;
+            embed.addFields(utilidadesCommands.slice(start, end));
+            return embed;
+        }
+        // --- FIN COMANDOS DE UTILIDADES ---
+
         // --- PAGINACIÓN GLOBAL ---
         // Lista de comandos globales (nombre, descripción)
         const globalCommands = [
@@ -18,13 +42,6 @@ module.exports = {
             { name: `${emojis.heart} Kiss`, value: `\`${config.prefix}kiss @usuario\`\nEnvía un beso a un usuario` },
             { name: '🇨🇴 Colombia', value: `\`${config.prefix}colombiano @usuario\` o \`${config.prefix}colombia @usuario\`\nColombianiza la imagen de perfil de un usuario con gorra, gafas y polvo blanco` },
             { name: '🕊️ Peru', value: `\`${config.prefix}peru @usuario\`\nPeruaniza la imagen de perfil de un usuario` },
-            { name: `${emojis.image} Avatar`, value: `\`${config.prefix}avatar @usuario\`\nMuestra el avatar de un usuario en alta resolución` },
-            { name: `${emojis.user} User Info`, value: `\`${config.prefix}userinfo @usuario\`\nMuestra información detallada de un usuario` },
-            { name: `${emojis.magic} 8Ball`, value: `\`${config.prefix}8ball <pregunta>\`\nResponde a tus preguntas de forma aleatoria` },
-            { name: `${emojis.title} Ontop`, value: `\`${config.prefix}ontop\`\nMuestra el poderío de The End` },
-            { name: `${emojis.globe} Redes`, value: `\`${config.prefix}redes\` o \`${config.prefix}fan\`\nMuestra las redes sociales` },
-            { name: `${emojis.bot} Info Bot`, value: `\`${config.prefix}infobot\`\nMuestra información sobre el bot` },
-            { name: `${emojis.help} Ayuda`, value: `\`${config.prefix}ayuda\`\nMuestra esta lista de comandos` },
             { name: '💀 Venezuela', value: `\`${config.prefix}venezuela @usuario\` o \`${config.prefix}veneco @usuario\`\nVenezolaniza la imagen de perfil de un usuario con efecto esqueleto` },
             { name: '🤗 Hug', value: `\`${config.prefix}hug @usuario\` o \`${config.prefix}abrazar @usuario\`\nAbraza a un usuario` },
             { name: '👋 Slap', value: `\`${config.prefix}slap @usuario\` o \`${config.prefix}bofetada @usuario\`\nAbofetea a un usuario` },
@@ -86,6 +103,9 @@ module.exports = {
                         );
                     break;
 
+                case 'utilidades':
+                    return createUtilidadesEmbed(page);
+
                 case 'global':
                     return createGlobalEmbed(page);
 
@@ -114,7 +134,11 @@ module.exports = {
 
                 case 'info':
                     embed.setTitle(`${emojis.info} Información Adicional`)
-                        .setDescription('• Los mensajes originales se eliminan automáticamente\n• El comando AFK notificará al staff después de 10 minutos\n• Los comandos NSFW solo funcionan en canales NSFW\n• Usa `??ayuda` para ver esta lista');
+                        .setDescription('• Los mensajes originales se eliminan automáticamente\n• El comando AFK notificará al staff después de 10 minutos\n• Los comandos NSFW solo funcionan en canales NSFW\n• Usa `??ayuda` para ver esta lista')
+                        .addFields(
+                            { name: `${emojis.title} Ontop`, value: `\`${config.prefix}ontop\`\nMuestra el poderío de The End` },
+                            { name: `${emojis.bot} Info Bot`, value: `\`${config.prefix}infobot\`\nMuestra información sobre el bot` }
+                        );
                     break;
 
                 case 'minecraft':
@@ -132,8 +156,8 @@ module.exports = {
         }
 
         // Crear los botones
-        function getRow(category, page, maxPage) {
-            if (category !== 'global') {
+        function getRow(category, page, maxPage, utilPage = 0, maxUtilPage = 0) {
+            if (category !== 'global' && category !== 'utilidades') {
                 const row1 = new ActionRowBuilder()
                     .addComponents(
                         new ButtonBuilder()
@@ -166,9 +190,32 @@ module.exports = {
                         new ButtonBuilder()
                             .setCustomId('help_info')
                             .setLabel('ℹ️ Info')
+                            .setStyle(ButtonStyle.Danger),
+                        new ButtonBuilder()
+                            .setCustomId('help_utilidades')
+                            .setLabel('🛠️ Utilidades')
                             .setStyle(ButtonStyle.Danger)
                     );
                 return [row1, row2];
+            }
+            if (category === 'utilidades') {
+                return [new ActionRowBuilder()
+                    .addComponents(
+                        new ButtonBuilder()
+                            .setCustomId('help_utilidades_prev')
+                            .setLabel('⬅️ Anterior')
+                            .setStyle(ButtonStyle.Secondary)
+                            .setDisabled(utilPage === 0),
+                        new ButtonBuilder()
+                            .setCustomId('help_main')
+                            .setLabel('🏠 Volver')
+                            .setStyle(ButtonStyle.Danger),
+                        new ButtonBuilder()
+                            .setCustomId('help_utilidades_next')
+                            .setLabel('Siguiente ➡️')
+                            .setStyle(ButtonStyle.Secondary)
+                            .setDisabled(utilPage === maxUtilPage)
+                    )];
             }
             // Solo para global: paginación y volver
             return [new ActionRowBuilder()
@@ -192,12 +239,14 @@ module.exports = {
 
         let globalPage = 0;
         const maxGlobalPage = Math.ceil(globalCommands.length / COMMANDS_PER_PAGE) - 1;
+        let utilPage = 0;
+        const maxUtilPage = Math.ceil(utilidadesCommands.length / UTILIDADES_PER_PAGE) - 1;
 
         try {
             // Enviar el mensaje inicial como respuesta
             const helpMessage = await message.reply({
                 embeds: [createHelpEmbed('main')],
-                components: getRow('main', 0, maxGlobalPage),
+                components: getRow('main', 0, maxGlobalPage, 0, maxUtilPage),
                 files: ['./src/assets/Banner.gif']
             });
 
@@ -218,7 +267,7 @@ module.exports = {
                     globalPage = Math.min(globalPage + 1, maxGlobalPage);
                     await interaction.update({
                         embeds: [createHelpEmbed('global', globalPage)],
-                        components: getRow('global', globalPage, maxGlobalPage),
+                        components: getRow('global', globalPage, maxGlobalPage, utilPage, maxUtilPage),
                         files: [],
                         attachments: []
                     });
@@ -228,7 +277,28 @@ module.exports = {
                     globalPage = Math.max(globalPage - 1, 0);
                     await interaction.update({
                         embeds: [createHelpEmbed('global', globalPage)],
-                        components: getRow('global', globalPage, maxGlobalPage),
+                        components: getRow('global', globalPage, maxGlobalPage, utilPage, maxUtilPage),
+                        files: [],
+                        attachments: []
+                    });
+                    return;
+                }
+                // Manejo de paginación utilidades
+                if (interaction.customId === 'help_utilidades_next') {
+                    utilPage = Math.min(utilPage + 1, maxUtilPage);
+                    await interaction.update({
+                        embeds: [createHelpEmbed('utilidades', utilPage)],
+                        components: getRow('utilidades', globalPage, maxGlobalPage, utilPage, maxUtilPage),
+                        files: [],
+                        attachments: []
+                    });
+                    return;
+                }
+                if (interaction.customId === 'help_utilidades_prev') {
+                    utilPage = Math.max(utilPage - 1, 0);
+                    await interaction.update({
+                        embeds: [createHelpEmbed('utilidades', utilPage)],
+                        components: getRow('utilidades', globalPage, maxGlobalPage, utilPage, maxUtilPage),
                         files: [],
                         attachments: []
                     });
@@ -238,24 +308,34 @@ module.exports = {
                 if (category === 'global') {
                     globalPage = 0;
                 }
+                if (category === 'utilidades') {
+                    utilPage = 0;
+                }
                 if (category === 'main') {
                     await interaction.update({
                         embeds: [createHelpEmbed(category)],
-                        components: getRow(category, globalPage, maxGlobalPage),
+                        components: getRow(category, globalPage, maxGlobalPage, utilPage, maxUtilPage),
                         files: ['./src/assets/Banner.gif'],
                         attachments: []
                     });
                 } else if (category === 'global') {
                     await interaction.update({
                         embeds: [createHelpEmbed('global', globalPage)],
-                        components: getRow('global', globalPage, maxGlobalPage),
+                        components: getRow('global', globalPage, maxGlobalPage, utilPage, maxUtilPage),
+                        files: [],
+                        attachments: []
+                    });
+                } else if (category === 'utilidades') {
+                    await interaction.update({
+                        embeds: [createHelpEmbed('utilidades', utilPage)],
+                        components: getRow('utilidades', globalPage, maxGlobalPage, utilPage, maxUtilPage),
                         files: [],
                         attachments: []
                     });
                 } else {
                     await interaction.update({
                         embeds: [createHelpEmbed(category)],
-                        components: getRow(category, globalPage, maxGlobalPage),
+                        components: getRow(category, globalPage, maxGlobalPage, utilPage, maxUtilPage),
                         files: [],
                         attachments: []
                     });
