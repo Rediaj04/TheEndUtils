@@ -40,130 +40,106 @@
 
 ---
 
-## 🔮 Comandos Destacados
+## 🔮 Comandos Detallados
 
-<details>
-<summary>🎭 Testing</summary>
-
+### 🎭 Testing
 _Comandos para pruebas y gestión de ingreso al clan._
 
-```bash
-??plantillas
-??test @usuario
-??pass <Nick> <@Discord> <Modo> <Resultado> <@Tester>
-??nopass <Nick> <@Discord> <Modo> <Resultado> <@Tester>
-??afk @usuario
-??reglas
-```
-</details>
+- `??plantillas` — Muestra el formulario de solicitud para el clan.
+- `??test @usuario` — Muestra el mensaje de finalización del test.
+- `??pass <Nick> <@Discord> <Modo> <Resultado> <@Tester>` — Aprueba a un usuario, genera embed con skin y reacciones.
+- `??nopass <Nick> <@Discord> <Modo> <Resultado> <@Tester>` — No aprueba a un usuario, genera embed con skin y reacciones.
+- `??afk @usuario` — Marca a un usuario como AFK y notifica al staff después de 10 minutos.
+- `??reglas` — Muestra las reglas del test de ingreso.
 
-<details>
-<summary>💀 Globales</summary>
+---
 
+### 💀 Globales
 _Comandos generales de interacción y diversión para todos los usuarios._
 
-```bash
-??kunno @usuario
-??peru @usuario
-??veneco @usuario
-??kiss
-??hug
-??slap
-??pat
-??baka
-??punch
-??blush
-??cry
-??laugh
-??poke
-??cuddle
-??wave
-??wink
-??facepalm
-??colombiano @usuario
-??dog
-??cat / ??gato / ??gata
-??random-user / ??userrandom / ??randomuser
-??venezuela @usuario / ??veneco @usuario
-??8ball
-??cm / ??memide
-```
-</details>
+- `??kunno @usuario` — Kunnoniza la imagen de perfil de un usuario.
+- `??kiss @usuario` — Envía un beso a un usuario.
+- `??colombiano @usuario` o `??colombia @usuario` — Colombianiza la imagen de perfil de un usuario con gorra, gafas y polvo blanco.
+- `??peru @usuario` — Peruaniza la imagen de perfil de un usuario.
+- `??venezuela @usuario` o `??veneco @usuario` — Venezolaniza la imagen de perfil de un usuario con efecto esqueleto.
+- `??hug @usuario` o `??abrazar @usuario` — Abraza a un usuario.
+- `??slap @usuario` o `??bofetada @usuario` — Abofetea a un usuario.
+- `??pat @usuario` o `??palmadita @usuario` — Da una palmadita a un usuario.
+- `??baka @usuario` o `??tonto @usuario` — Llama tonto a un usuario.
+- `??punch @usuario` o `??puñetazo @usuario` — Da un puñetazo a un usuario.
+- `??blush @usuario` o `??sonrojarse @usuario` — Te sonrojas o haces sonrojar a alguien.
+- `??cry @usuario` o `??llorar @usuario` — Llora o hace llorar a alguien.
+- `??laugh @usuario` o `??reir @usuario` — Ríe o hace reír a alguien.
+- `??poke @usuario` o `??tocar @usuario` — Toca a un usuario.
+- `??cuddle @usuario` o `??acurrucar @usuario` — Acurruca a un usuario.
+- `??wave @usuario` o `??saludar @usuario` — Saluda a un usuario.
+- `??wink @usuario` o `??guiñar @usuario` — Guiña a un usuario.
+- `??facepalm @usuario` o `??palmadacara @usuario` — Palmada en la cara (facepalm).
+- `??dog` — Muestra una foto aleatoria de un perrito.
+- `??cat` o `??gato` o `??gata` — Muestra una foto aleatoria de un gatito.
+- `??random-user` o `??userrandom` o `??randomuser` — Muestra información de un usuario aleatorio.
 
-<details>
-<summary>🛠️ Utilidades</summary>
+---
 
+### 🛠️ Utilidades
 _Comandos útiles para todos los usuarios del servidor._
 
-```bash
-??avatar @usuario
-??userinfo @usuario
-??ayuda
-??redes / ??fan
-```
-</details>
+- `??avatar @usuario` — Muestra el avatar de un usuario en alta resolución.
+- `??userinfo @usuario` — Muestra información detallada de un usuario.
+- `??ayuda` — Muestra esta lista de comandos.
+- `??redes` o `??fan` — Muestra las redes sociales.
+- `??ontop` — Muestra el poderío de The End.
+- `??infobot` — Muestra información sobre el bot.
 
-<details>
-<summary>ℹ️ Info</summary>
+---
 
+### ℹ️ Info
 _Comandos informativos sobre el bot y la comunidad._
 
-```bash
-??ontop
-??infobot
-```
-</details>
+- `??ontop` — Muestra el poderío de The End.
+- `??infobot` — Muestra información sobre el bot.
 
-<details>
-<summary>⛏️ Minecraft</summary>
+---
 
-```bash
-??tier <usuario>
-??tierv2 <usuario>
-??namehistory <usuario>
-```
-</details>
+### ⛏️ Minecraft
+_Comandos útiles para jugadores de Minecraft en The End Community._
 
-<details>
-<summary>🔞 NSFW</summary>
+- `??tier <usuario_minecraft>` — Muestra las tiers de un jugador de Minecraft usando la API de McTiers.
+- `??tierv2 <usuario_minecraft>` — Muestra las tiers v2 de un jugador de Minecraft usando la API de McTiers.io (Crystal, Elytra, etc).
+- `??namehistory <usuario>` — Muestra el historial de nombres de un jugador de Minecraft usando la API de Crafty.gg.
 
+---
+
+### 🔞 NSFW
 _Comandos solo disponibles en canales NSFW._
 
-```bash
-??waifu
-??neko
-??trap
-??blowjob
-??threesome_mmf
-??threesome_ffm
-??threesome_fff
-??yuri
-??yaoi
-??pussylick
-??solo_male
-??solo
-??anal
-??cum
-??fuck
-```
-</details>
+- `??waifu` — Descubre una waifu que te hará perder la cabeza.
+- `??neko` — Una neko traviesa aparece solo para ti, ¿te atreves a mirarla?
+- `??trap` — ¿Chico o chica? ¡Déjate sorprender por un trap irresistible!
+- `??blowjob` — Alguien está disfrutando mucho... ¿quieres ver quién?
+- `??anal` — Atrévete a explorar el lado más prohibido del placer.
+- `??cum` — ¡Momento explosivo! Alguien no pudo contenerse...
+- `??fuck` — La pasión se desborda y aquí nadie se contiene.
+- `??pussylick` — Una lamida que hará temblar hasta al más valiente.
+- `??solo` — Una chica se divierte a solas... ¿la acompañas con la mirada?
+- `??solo_male` — Un chico se entrega al placer en solitario, sin vergüenza.
+- `??threesome_fff` — Tres chicas, una fantasía y mucha acción.
+- `??threesome_ffm` — Dos chicas y un chico, la mezcla perfecta para el caos.
+- `??threesome_mmf` — Dos chicos y una chica, la fiesta está asegurada.
+- `??yaoi` — Amor y pasión entre chicos, solo para corazones valientes.
+- `??yuri` — Dulzura y deseo entre chicas, un momento para disfrutar.
 
-<details>
-<summary>🧠 Administración</summary>
+---
 
+### 🧠 Administración
 _Comandos para la gestión y moderación del servidor. Solo para administradores._
 
-- `??roles` — Administra los roles permitidos para comandos de testing.
-- `??clear <número>` — Borra la cantidad de mensajes especificada en el canal.
-- `??koth` — Comando para gestionar el evento King of The Hill.
-- `??spam "frase" <cantidad>` — Spamea una frase varias veces (máx 50, solo admins, máx 120 caracteres).
-
-```bash
-??roles
-??clear <número>
-??koth
-```
-</details>
+- `??roles` — Muestra los roles permitidos para testing.
+- `??roles add @rol` — Agrega un rol a la lista de roles permitidos.
+- `??roles remove @rol` — Remueve un rol de la lista de roles permitidos.
+- `??clear <cantidad>` — Borra hasta 50 mensajes en el canal actual.
+- `??koth` — Envía o actualiza el embed de horarios de KOTH en el canal correspondiente.
+- `??spam "frase" cantidad` — Envía una frase varias veces en el canal. Solo para admins. (máx 50 mensajes, máx 120 caracteres de frase)
 
 ---
 
