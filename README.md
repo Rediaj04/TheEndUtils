@@ -151,6 +151,13 @@ _Comandos solo disponibles en canales NSFW._
 <details>
 <summary>🧠 Administración</summary>
 
+_Comandos para la gestión y moderación del servidor. Solo para administradores._
+
+- `??roles` — Administra los roles permitidos para comandos de testing.
+- `??clear <número>` — Borra la cantidad de mensajes especificada en el canal.
+- `??koth` — Comando para gestionar el evento King of The Hill.
+- `??spam "frase" <cantidad>` — Spamea una frase varias veces (máx 50, solo admins, máx 120 caracteres).
+
 ```bash
 ??roles
 ??clear <número>

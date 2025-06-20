@@ -153,7 +153,8 @@ module.exports = {
                             { name: `${emojis.roles} Agregar Rol`, value: `\`${config.prefix}roles add @rol\`\nAgrega un rol a la lista de roles permitidos` },
                             { name: `${emojis.roles} Remover Rol`, value: `\`${config.prefix}roles remove @rol\`\nRemueve un rol de la lista de roles permitidos` },
                             { name: `${emojis.error} Clear`, value: `\`${config.prefix}clear <cantidad>\`\nBorra hasta 50 mensajes en el canal actual` },
-                            { name: '🏰 KOTH', value: `\`${config.prefix}koth\`\nEnvía o actualiza el embed de horarios de KOTH en el canal correspondiente` }
+                            { name: '🏰 KOTH', value: `\`${config.prefix}koth\`\nEnvía o actualiza el embed de horarios de KOTH en el canal correspondiente` },
+                            { name: `${emojis.error} Spam`, value: `\`${config.prefix}spam \"frase\" cantidad\`\nEnvía una frase varias veces en el canal. Solo para admins. (máx 50 mensajes, máx 120 caracteres de frase)` }
                         );
                     break;
 
