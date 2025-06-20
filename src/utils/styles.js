@@ -44,6 +44,7 @@ module.exports = {
         users: '👥',
         fun: '🎉',
         bot: '🤖',
-        heart: '💖'
+        heart: '💖',
+        serverinfo: '🌐'
     }
 }; 

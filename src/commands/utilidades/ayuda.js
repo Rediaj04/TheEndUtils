@@ -19,6 +19,8 @@ module.exports = {
             { name: `${emojis.globe} Redes`, value: `\`${config.prefix}redes\` o \`${config.prefix}fan\`\nMuestra las redes sociales` },
             { name: `${emojis.title} Ontop`, value: `\`${config.prefix}ontop\`\nMuestra el poderío de The End` },
             { name: `${emojis.bot} Info Bot`, value: `\`${config.prefix}infobot\`\nMuestra información sobre el bot` },
+            { name: `${emojis.server} Server Info`, value: `\`${config.prefix}serverinfo\`\nMuestra información sobre el servidor: miembros, canales, roles, fecha de creación, etc.` }
+
         ];
         const UTILIDADES_PER_PAGE = 6;
         function createUtilidadesEmbed(page = 0) {

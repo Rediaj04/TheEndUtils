@@ -91,6 +91,8 @@ _Comandos útiles para todos los usuarios del servidor._
 - `??redes` o `??fan` — Muestra las redes sociales.
 - `??ontop` — Muestra el poderío de The End.
 - `??infobot` — Muestra información sobre el bot.
+- `??serverinfo` — Muestra información sobre el servidor: miembros, canales, roles, fecha de creación, etc.
+
 
 ---
 
