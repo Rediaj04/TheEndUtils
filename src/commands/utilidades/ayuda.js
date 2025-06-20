@@ -75,6 +75,39 @@ module.exports = {
         }
         // --- FIN PAGINACIÓN GLOBAL ---
 
+        // --- COMANDOS NSFW ---
+        const nsfwCommands = [
+            { name: '🌸 Waifu', value: `\`${config.prefix}waifu\`\nDescubre una waifu que te hará perder la cabeza.` },
+            { name: '🐱 Neko', value: `\`${config.prefix}neko\`\nUna neko traviesa aparece solo para ti, ¿te atreves a mirarla?` },
+            { name: '🎭 Trap', value: `\`${config.prefix}trap\`\n¿Chico o chica? ¡Déjate sorprender por un trap irresistible!` },
+            { name: '💋 Blowjob', value: `\`${config.prefix}blowjob\`\nAlguien está disfrutando mucho... ¿quieres ver quién?` },
+            { name: '🍑 Anal', value: `\`${config.prefix}anal\`\nAtrévete a explorar el lado más prohibido del placer.` },
+            { name: '💦 Cum', value: `\`${config.prefix}cum\`\n¡Momento explosivo! Alguien no pudo contenerse...` },
+            { name: '🔥 Fuck', value: `\`${config.prefix}fuck\`\nLa pasión se desborda y aquí nadie se contiene.` },
+            { name: '👅 Pussylick', value: `\`${config.prefix}pussylick\`\nUna lamida que hará temblar hasta al más valiente.` },
+            { name: '😏 Solo', value: `\`${config.prefix}solo\`\nUna chica se divierte a solas... ¿la acompañas con la mirada?` },
+            { name: '🍆 Solo Male', value: `\`${config.prefix}solo_male\`\nUn chico se entrega al placer en solitario, sin vergüenza.` },
+            { name: '👩‍❤️‍👩‍❤️‍👩 Threesome FFF', value: `\`${config.prefix}threesome_fff\`\nTres chicas, una fantasía y mucha acción.` },
+            { name: '🔥 Threesome FFM', value: `\`${config.prefix}threesome_ffm\`\nDos chicas y un chico, la mezcla perfecta para el caos.` },
+            { name: '💪🍆 Threesome MMF', value: `\`${config.prefix}threesome_mmf\`\nDos chicos y una chica, la fiesta está asegurada.` },
+            { name: '💙 Yaoi', value: `\`${config.prefix}yaoi\`\nAmor y pasión entre chicos, solo para corazones valientes.` },
+            { name: '💕 Yuri', value: `\`${config.prefix}yuri\`\nDulzura y deseo entre chicas, un momento para disfrutar.` }
+        ];
+        const NSFW_PER_PAGE = 6;
+        function createNsfwEmbed(page = 0) {
+            const embed = new EmbedBuilder()
+                .setColor('#FF0000')
+                .setTitle('🔞 Comandos NSFW')
+                .setDescription('*Solo disponibles en canales NSFW*')
+                .setFooter({ text: `Página ${page + 1} de ${Math.ceil(nsfwCommands.length / NSFW_PER_PAGE)} • The End Utils - Tu asistente perfecto 💖` })
+                .setTimestamp();
+            const start = page * NSFW_PER_PAGE;
+            const end = start + NSFW_PER_PAGE;
+            embed.addFields(nsfwCommands.slice(start, end));
+            return embed;
+        }
+        // --- FIN COMANDOS NSFW ---
+
         // Función para crear el embed con la categoría seleccionada
         function createHelpEmbed(category = 'main', page = 0) {
             const embed = new EmbedBuilder()
@@ -110,26 +143,7 @@ module.exports = {
                     return createGlobalEmbed(page);
 
                 case 'nsfw':
-                    embed.setTitle('🔞 Comandos NSFW')
-                        .setDescription('*Solo disponibles en canales NSFW*')
-                        .addFields(
-                            { name: '🌸 Waifu', value: `\`${config.prefix}waifu\`\nMuestra una imagen de waifu` },
-                            { name: '🐱 Neko', value: `\`${config.prefix}neko\`\nMuestra una imagen de neko` },
-                            { name: '🎭 Trap', value: `\`${config.prefix}trap\`\nMuestra una imagen de trap` },
-                            { name: '💋 Blowjob', value: `\`${config.prefix}blowjob\`\nMuestra una imagen de blowjob` },
-                            { name: '🍑 Anal', value: `\`${config.prefix}anal\`\nMuestra un gif NSFW de sexo anal` },
-                            { name: '💦 Cum', value: `\`${config.prefix}cum\`\nMuestra un gif NSFW de corrida` },
-                            { name: '🔥 Fuck', value: `\`${config.prefix}fuck\`\nMuestra un gif NSFW de sexo` },
-                            { name: '👅 Pussylick', value: `\`${config.prefix}pussylick\`\nMuestra un gif NSFW de lamida` },
-                            { name: '😏 Solo', value: `\`${config.prefix}solo\`\nMuestra un gif NSFW de chica sola` },
-                            { name: '🍆 Solo Male', value: `\`${config.prefix}solo_male\`\nMuestra un gif NSFW de chico solo` },
-                            { name: '👩‍❤️‍👩‍❤️‍👩 Threesome FFF', value: `\`${config.prefix}threesome_fff\`\nMuestra un gif NSFW de trío FFF` },
-                            { name: '🔥 Threesome FFM', value: `\`${config.prefix}threesome_ffm\`\nMuestra un gif NSFW de trío FFM` },
-                            { name: '💪🍆 Threesome MMF', value: `\`${config.prefix}threesome_mmf\`\nMuestra un gif NSFW de trío MMF` },
-                            { name: '💙 Yaoi', value: `\`${config.prefix}yaoi\`\nMuestra un gif NSFW de yaoi` },
-                            { name: '💕 Yuri', value: `\`${config.prefix}yuri\`\nMuestra un gif NSFW de yuri` }
-                        );
-                    break;
+                    return createNsfwEmbed(page);
 
                 case 'admin':
                     embed.setTitle(`${emojis.admin} Comandos de Administración`)
@@ -167,8 +181,8 @@ module.exports = {
         }
 
         // Crear los botones
-        function getRow(category, page, maxPage, utilPage = 0, maxUtilPage = 0) {
-            if (category !== 'global' && category !== 'utilidades') {
+        function getRow(category, page, maxPage, utilPage = 0, maxUtilPage = 0, nsfwPage = 0, maxNsfwPage = 0) {
+            if (category !== 'global' && category !== 'utilidades' && category !== 'nsfw') {
                 const row1 = new ActionRowBuilder()
                     .addComponents(
                         new ButtonBuilder()
@@ -228,6 +242,44 @@ module.exports = {
                             .setDisabled(utilPage === maxUtilPage)
                     )];
             }
+            if (category === 'global') {
+                return [new ActionRowBuilder()
+                    .addComponents(
+                        new ButtonBuilder()
+                            .setCustomId('help_global_prev')
+                            .setLabel('⬅️ Anterior')
+                            .setStyle(ButtonStyle.Secondary)
+                            .setDisabled(page === 0),
+                        new ButtonBuilder()
+                            .setCustomId('help_main')
+                            .setLabel('🏠 Volver')
+                            .setStyle(ButtonStyle.Danger),
+                        new ButtonBuilder()
+                            .setCustomId('help_global_next')
+                            .setLabel('Siguiente ➡️')
+                            .setStyle(ButtonStyle.Secondary)
+                            .setDisabled(page === maxPage)
+                    )];
+            }
+            if (category === 'nsfw') {
+                return [new ActionRowBuilder()
+                    .addComponents(
+                        new ButtonBuilder()
+                            .setCustomId('help_nsfw_prev')
+                            .setLabel('⬅️ Anterior')
+                            .setStyle(ButtonStyle.Secondary)
+                            .setDisabled(nsfwPage === 0),
+                        new ButtonBuilder()
+                            .setCustomId('help_main')
+                            .setLabel('🏠 Volver')
+                            .setStyle(ButtonStyle.Danger),
+                        new ButtonBuilder()
+                            .setCustomId('help_nsfw_next')
+                            .setLabel('Siguiente ➡️')
+                            .setStyle(ButtonStyle.Secondary)
+                            .setDisabled(nsfwPage === maxNsfwPage)
+                    )];
+            }
             // Solo para global: paginación y volver
             return [new ActionRowBuilder()
                 .addComponents(
@@ -252,12 +304,14 @@ module.exports = {
         const maxGlobalPage = Math.ceil(globalCommands.length / COMMANDS_PER_PAGE) - 1;
         let utilPage = 0;
         const maxUtilPage = Math.ceil(utilidadesCommands.length / UTILIDADES_PER_PAGE) - 1;
+        let nsfwPage = 0;
+        const maxNsfwPage = Math.ceil(nsfwCommands.length / NSFW_PER_PAGE) - 1;
 
         try {
             // Enviar el mensaje inicial como respuesta
             const helpMessage = await message.reply({
                 embeds: [createHelpEmbed('main')],
-                components: getRow('main', 0, maxGlobalPage, 0, maxUtilPage),
+                components: getRow('main', 0, maxGlobalPage, 0, maxUtilPage, nsfwPage, maxNsfwPage),
                 files: ['./src/assets/Banner.gif']
             });
 
@@ -278,7 +332,7 @@ module.exports = {
                     globalPage = Math.min(globalPage + 1, maxGlobalPage);
                     await interaction.update({
                         embeds: [createHelpEmbed('global', globalPage)],
-                        components: getRow('global', globalPage, maxGlobalPage, utilPage, maxUtilPage),
+                        components: getRow('global', globalPage, maxGlobalPage, utilPage, maxUtilPage, nsfwPage, maxNsfwPage),
                         files: [],
                         attachments: []
                     });
@@ -288,7 +342,7 @@ module.exports = {
                     globalPage = Math.max(globalPage - 1, 0);
                     await interaction.update({
                         embeds: [createHelpEmbed('global', globalPage)],
-                        components: getRow('global', globalPage, maxGlobalPage, utilPage, maxUtilPage),
+                        components: getRow('global', globalPage, maxGlobalPage, utilPage, maxUtilPage, nsfwPage, maxNsfwPage),
                         files: [],
                         attachments: []
                     });
@@ -299,7 +353,7 @@ module.exports = {
                     utilPage = Math.min(utilPage + 1, maxUtilPage);
                     await interaction.update({
                         embeds: [createHelpEmbed('utilidades', utilPage)],
-                        components: getRow('utilidades', globalPage, maxGlobalPage, utilPage, maxUtilPage),
+                        components: getRow('utilidades', globalPage, maxGlobalPage, utilPage, maxUtilPage, nsfwPage, maxNsfwPage),
                         files: [],
                         attachments: []
                     });
@@ -309,7 +363,28 @@ module.exports = {
                     utilPage = Math.max(utilPage - 1, 0);
                     await interaction.update({
                         embeds: [createHelpEmbed('utilidades', utilPage)],
-                        components: getRow('utilidades', globalPage, maxGlobalPage, utilPage, maxUtilPage),
+                        components: getRow('utilidades', globalPage, maxGlobalPage, utilPage, maxUtilPage, nsfwPage, maxNsfwPage),
+                        files: [],
+                        attachments: []
+                    });
+                    return;
+                }
+                // Manejo de paginación NSFW
+                if (interaction.customId === 'help_nsfw_next') {
+                    nsfwPage = Math.min(nsfwPage + 1, maxNsfwPage);
+                    await interaction.update({
+                        embeds: [createHelpEmbed('nsfw', nsfwPage)],
+                        components: getRow('nsfw', globalPage, maxGlobalPage, utilPage, maxUtilPage, nsfwPage, maxNsfwPage),
+                        files: [],
+                        attachments: []
+                    });
+                    return;
+                }
+                if (interaction.customId === 'help_nsfw_prev') {
+                    nsfwPage = Math.max(nsfwPage - 1, 0);
+                    await interaction.update({
+                        embeds: [createHelpEmbed('nsfw', nsfwPage)],
+                        components: getRow('nsfw', globalPage, maxGlobalPage, utilPage, maxUtilPage, nsfwPage, maxNsfwPage),
                         files: [],
                         attachments: []
                     });
@@ -322,31 +397,41 @@ module.exports = {
                 if (category === 'utilidades') {
                     utilPage = 0;
                 }
+                if (category === 'nsfw') {
+                    nsfwPage = 0;
+                }
                 if (category === 'main') {
                     await interaction.update({
                         embeds: [createHelpEmbed(category)],
-                        components: getRow(category, globalPage, maxGlobalPage, utilPage, maxUtilPage),
+                        components: getRow(category, globalPage, maxGlobalPage, utilPage, maxUtilPage, nsfwPage, maxNsfwPage),
                         files: ['./src/assets/Banner.gif'],
                         attachments: []
                     });
                 } else if (category === 'global') {
                     await interaction.update({
                         embeds: [createHelpEmbed('global', globalPage)],
-                        components: getRow('global', globalPage, maxGlobalPage, utilPage, maxUtilPage),
+                        components: getRow('global', globalPage, maxGlobalPage, utilPage, maxUtilPage, nsfwPage, maxNsfwPage),
                         files: [],
                         attachments: []
                     });
                 } else if (category === 'utilidades') {
                     await interaction.update({
                         embeds: [createHelpEmbed('utilidades', utilPage)],
-                        components: getRow('utilidades', globalPage, maxGlobalPage, utilPage, maxUtilPage),
+                        components: getRow('utilidades', globalPage, maxGlobalPage, utilPage, maxUtilPage, nsfwPage, maxNsfwPage),
+                        files: [],
+                        attachments: []
+                    });
+                } else if (category === 'nsfw') {
+                    await interaction.update({
+                        embeds: [createHelpEmbed('nsfw', nsfwPage)],
+                        components: getRow('nsfw', globalPage, maxGlobalPage, utilPage, maxUtilPage, nsfwPage, maxNsfwPage),
                         files: [],
                         attachments: []
                     });
                 } else {
                     await interaction.update({
                         embeds: [createHelpEmbed(category)],
-                        components: getRow(category, globalPage, maxGlobalPage, utilPage, maxUtilPage),
+                        components: getRow(category, globalPage, maxGlobalPage, utilPage, maxUtilPage, nsfwPage, maxNsfwPage),
                         files: [],
                         attachments: []
                     });
