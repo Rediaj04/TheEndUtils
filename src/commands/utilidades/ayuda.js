@@ -43,6 +43,7 @@ module.exports = {
             { name: '🇨🇴 Colombia', value: `\`${config.prefix}colombiano @usuario\` o \`${config.prefix}colombia @usuario\`\nColombianiza la imagen de perfil de un usuario con gorra, gafas y polvo blanco` },
             { name: '🕊️ Peru', value: `\`${config.prefix}peru @usuario\`\nPeruaniza la imagen de perfil de un usuario` },
             { name: '💀 Venezuela', value: `\`${config.prefix}venezuela @usuario\` o \`${config.prefix}veneco @usuario\`\nVenezolaniza la imagen de perfil de un usuario con efecto esqueleto` },
+            { name: '🤪 Tonto', value: `\`${config.prefix}tonto @usuario\`, \`${config.prefix}bobo @usuario\`, \`${config.prefix}tonta @usuario\`, \`${config.prefix}boba @usuario\`\nTontoliza la imagen de perfil de un usuario con un gorro de burro y un toque divertido.` },
             { name: '🤗 Hug', value: `\`${config.prefix}hug @usuario\` o \`${config.prefix}abrazar @usuario\`\nAbraza a un usuario` },
             { name: '👋 Slap', value: `\`${config.prefix}slap @usuario\` o \`${config.prefix}bofetada @usuario\`\nAbofetea a un usuario` },
             { name: '🫶 Pat', value: `\`${config.prefix}pat @usuario\` o \`${config.prefix}palmadita @usuario\`\nDa una palmadita a un usuario` },

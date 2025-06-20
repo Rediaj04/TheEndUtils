@@ -62,6 +62,7 @@ _Comandos generales de interacción y diversión para todos los usuarios._
 - `??colombiano @usuario` o `??colombia @usuario` — Colombianiza la imagen de perfil de un usuario con gorra, gafas y polvo blanco.
 - `??peru @usuario` — Peruaniza la imagen de perfil de un usuario.
 - `??venezuela @usuario` o `??veneco @usuario` — Venezolaniza la imagen de perfil de un usuario con efecto esqueleto.
+- `??tonto @usuario`, `??bobo @usuario`, `??tonta @usuario`, `??boba @usuario` — Tontoliza la imagen de perfil de un usuario con un gorro de burro y un toque divertido.
 - `??hug @usuario` o `??abrazar @usuario` — Abraza a un usuario.
 - `??slap @usuario` o `??bofetada @usuario` — Abofetea a un usuario.
 - `??pat @usuario` o `??palmadita @usuario` — Da una palmadita a un usuario.
