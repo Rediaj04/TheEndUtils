@@ -4,8 +4,9 @@ const errores = require('../../utils/errores');
 const fetch = require('node-fetch');
 
 module.exports = {
-    name: 'neko',
-    description: 'Muestra una imagen de neko (solo canales NSFW)',
+    name: 'trap',
+    aliases: ['trampa', 'trapito'],
+    description: 'Muestra una imagen de trap (solo canales NSFW)',
     async execute(message, args, client) {
         try {
             // Verificar si el canal es NSFW
@@ -18,13 +19,13 @@ module.exports = {
 
             let imageUrl = '';
             try {
-                const response = await fetch('https://api.waifu.pics/nsfw/neko');
+                const response = await fetch('https://api.waifu.pics/nsfw/trap');
                 const data = await response.json();
                 if (data.url) {
                     imageUrl = data.url;
                 }
             } catch (err) {
-                console.error('Error obteniendo imagen de neko:', err);
+                console.error('Error obteniendo imagen de trap:', err);
             }
 
             if (!imageUrl) {
@@ -34,17 +35,17 @@ module.exports = {
                 return;
             }
 
-            const nekoEmbed = new EmbedBuilder()
+            const trapEmbed = new EmbedBuilder()
                 .setColor('#FF69B4')
-                .setTitle('🐱 ¡Neko! 🐱')
-                .setDescription(`**${message.author.username}** encontró una adorable neko 🐱`)
+                .setTitle('🎭 ¡Trap! 🎭')
+                .setDescription(`**${message.author.username}** encontró un trap 🎭`)
                 .setImage(imageUrl)
                 .setFooter({ text: 'Powered by waifu.pics' })
                 .setTimestamp();
 
-            await message.reply({ embeds: [nekoEmbed] });
+            await message.reply({ embeds: [trapEmbed] });
         } catch (error) {
-            console.error('Error en el comando neko:', error);
+            console.error('Error en el comando trap:', error);
             message.reply(errores.ERROR_DESCONOCIDO + ' Por favor, intenta de nuevo más tarde.').then(msg => {
                 setTimeout(() => msg.delete().catch(console.error), errores.TIEMPO_BORRADO_ERROR);
             });
