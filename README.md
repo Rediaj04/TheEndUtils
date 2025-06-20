@@ -220,8 +220,19 @@ Bajo contrato infernal MIT.
   <b>Gracias a todos los proyectos y tecnologías que hacen posible The End Utils:</b><br><br>
   <a href="https://mctiers.com" title="McTiers API"><img src="https://mctiers.com/favicon.ico" width="40" style="border-radius:8px;"/></a>
   <a href="https://crafty.gg" title="Crafty.gg"><img src="https://crafty.gg/favicon.ico" width="40" style="border-radius:8px;"/></a>
-  <a href="https://nodejs.org" title="Node.js"><img src="https://nodejs.org/static/images/logo.svg" width="40"/></a>
-  <a href="https://discord.com" title="Discord"><img src="https://cdn.jsdelivr.net/gh/edent/SuperTinyIcons/images/svg/discord.svg" width="40"/></a>
-  <a href="https://discord.js.org" title="discord.js"><img src="https://raw.githubusercontent.com/discordjs/discord.js/main/.github/icon.svg" width="40"/></a>
-  <a href="https://github.com/" title="GitHub"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="40"/></a>
+  <a href="https://nodejs.org" title="Node.js"><img src="https://nodejs.org/static/images/logo.svg" width="40" height="40" style="border-radius:8px;object-fit:contain;vertical-align:middle;"/></a>
+  <a href="https://discord.com" title="Discord"><img src="https://cdn.jsdelivr.net/gh/edent/SuperTinyIcons/images/svg/discord.svg" width="40" height="40" style="border-radius:8px;object-fit:contain;vertical-align:middle;"/></a>
+  <a href="https://discord.js.org" title="discord.js">
+    <img src="https://avatars.githubusercontent.com/u/26492485?s=200&v=4" width="40" height="40" style="border-radius:8px;object-fit:contain;vertical-align:middle;"/>
+  </a>
+  <a href="https://github.com/" title="GitHub"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="40" height="40" style="border-radius:8px;object-fit:contain;vertical-align:middle;"/></a>
+  <a href="https://www.npmjs.com/" title="NPM"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg" width="40" height="40" style="border-radius:8px;object-fit:contain;vertical-align:middle;"/></a>
+  <a href="https://www.npmjs.com/package/canvas" title="Canvas">
+    <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" width="40" height="40" style="border-radius:8px;object-fit:contain;vertical-align:middle;"/>
+  </a>
+  <a href="https://www.npmjs.com/package/dotenv" title="dotenv"><img src="https://raw.githubusercontent.com/motdotla/dotenv/master/dotenv.svg" width="40" height="40" style="border-radius:8px;object-fit:contain;vertical-align:middle;"/></a>
+  <a href="https://nodemon.io/" title="nodemon">
+    <img src="https://img.shields.io/badge/nodemon-green?logo=nodemon&logoColor=white" width="40" height="40" style="border-radius:8px;object-fit:contain;vertical-align:middle;"/>
+  </a>
+  <a href="https://developer.mozilla.org/es/docs/Web/JavaScript" title="JavaScript"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="40" height="40" style="border-radius:8px;object-fit:contain;vertical-align:middle;"/></a>
 </p>
