@@ -82,7 +82,8 @@ module.exports = {
             await sentMsg.react(emoji).catch(() => {});
         }
 
-        await message.reply('✅ Resultado enviado correctamente.');
+        const finalMessage = `⚠️ **Resultado: No Aprobado**\n\nLamentablemente, no has superado las pruebas esta vez.  \n📄 Puedes revisar los detalles aquí:  \n\n🔗 ${sentMsg.url}\n\n⚡ No te desanimes, ¡puedes volver a intentarlo en **1 semana**! ⚡ ${discord}`;
+        await message.channel.send(finalMessage);
         await message.delete().catch(console.error);
     },
 }; 

@@ -82,7 +82,8 @@ module.exports = {
             await sentMsg.react(emoji).catch(() => {});
         }
 
-        await message.reply('✅ Resultado enviado correctamente.');
+        const finalMessage = `🎉 **¡Felicidades!**\n\n✅ Has aprobado las pruebas y tu resultado ha sido **positivo**.  \n\n📄 Revisa los detalles en el siguiente canal:  \n\n🔗 ${sentMsg.url}\n\n${discord}`;
+        await message.channel.send(finalMessage);
         await message.delete().catch(console.error);
     },
 }; 
